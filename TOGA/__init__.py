@@ -12,7 +12,7 @@ from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from redis import StrictRedis
 from Python_ARQ import ARQ
 from pyrogram import Client, errors
-from TOGA.services.quoteapi import Quotly
+from YUI.services.quoteapi import Quotly
 
 StartTime = time.time()
 
@@ -23,8 +23,8 @@ logging.basicConfig(
               logging.StreamHandler()],
     level=logging.INFO)
 
-LOGGER = logging.getLogger("[TOGA]")
-LOGGER.info("CREATED BY: KAC-CHAN (t.me/PervertSenpai)")
+LOGGER = logging.getLogger("[YUI]")
+LOGGER.info("CREATED BY: PrincesssGirl)")
 
 log = logging.getLogger('[Your Bot Is DEPLOYING]')
 
@@ -124,7 +124,7 @@ if ENV:
             "Your blacklisted chats list does not contain valid integers.")
     
 else:
-    from TOGA.config import Development as Config
+    from YUI.config import Development as Config
     TOKEN = Config.TOKEN
 
     try:
@@ -230,8 +230,8 @@ aiohttpsession = ClientSession()
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("TOGA", API_ID, API_HASH)
-pbot = Client("toga_robot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+telethn = TelegramClient("YUI", API_ID, API_HASH)
+pbot = Client("YuigaRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
 
@@ -243,7 +243,7 @@ TIGERS = list(TIGERS)
 
 
 # Load at end to ensure all prev variables have been set
-from TOGA.modules.helper_funcs.handlers import (CustomCommandHandler,
+from YUI.modules.helper_funcs.handlers import (CustomCommandHandler,
                                                         CustomMessageHandler,
                                                         CustomRegexHandler)
 
@@ -265,7 +265,7 @@ BOT_NAME = bottie.first_name
 BOT_MENTION = bottie.mention
 
 print(
-    "[TOGA] TOGA Is Starting."
+    "[YUI] YUI Is Starting."
 )
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
@@ -274,7 +274,7 @@ try:
 
     REDIS.ping()
 
-    LOGGER.info("[TOGA]:Connecting To Redis Database")
+    LOGGER.info("[YUI]:Connecting To Redis Database")
 
 except BaseException:
 
@@ -285,10 +285,10 @@ finally:
    REDIS.ping()
 
 print(
-    "[TOGA] SERVERS Connected SUCCESSFULLY!!"
+    "[YUI] SERVERS Connected SUCCESSFULLY!!"
 )
 print(
-    "[TOGA] INITIALIZING MODULES ERROR!!"
+    "[YUI] INITIALIZING MODULES ERROR!!"
 )
 
 quotly = Quotly()
