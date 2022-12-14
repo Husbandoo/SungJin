@@ -1,6 +1,6 @@
 import threading
 from sqlalchemy import Column, String
-from TOGA.modules.sql import BASE, SESSION
+from YUI.modules.sql import BASE, SESSION
 #   |----------------------------------|
 #   |  Test Module by @Awesome-Prince |
 #   |        Kang with Credits         |
