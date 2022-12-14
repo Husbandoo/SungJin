@@ -24,13 +24,13 @@ class Config(object):
     WEBHOOK=False
     BOT_API_URL="5614075230:AAHwMlH22eJH8BgVDyHTI0bPWODMRu727pI"
     #kacrmdi
-    WOLVES=
+    WOLVES=[]
     BOT_ID="5885016551" 
     SQLALCHEMY_DATABASE_URI="postgres://jympgnps:2_sz2vN3Zz8z5thAssDB9BRhQt8BZRKT@jelani.db.elephantsql.com/jympgnps" 
     JOIN_LOGGER="-1001692375111" 
     API_HASH="439d58a783f6e70086ea81ba5baa5207" 
     INFOPIC=True
-    TIGERS=
+    TIGERS=[]
     API_ID="28624076"
     BL_CHATS=[1]
     DB_URL2="postgres://dpmyesld:reMVuSpnDIcTaIm1B_zGevEe1MIwK5ha@salt.db.elephantsql.com/dpmyesld" 
