@@ -1,14 +1,14 @@
 import html
 
-from TOGA import ALLOW_EXCL, CustomCommandHandler, dispatcher
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.chat_status import (
+from YUI import ALLOW_EXCL, CustomCommandHandler, dispatcher
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.chat_status import (
     bot_can_delete,
     connection_status,
     dev_plus,
     user_admin,
 )
-from TOGA.modules.sql import cleaner_sql as sql
+from YUI.modules.sql import cleaner_sql as sql
 from telegram import ParseMode, Update
 from telegram.ext import (
     CallbackContext,
