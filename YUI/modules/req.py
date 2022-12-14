@@ -1,4 +1,4 @@
-from TOGA.modules.language import gs
+from YUI.modules.language import gs
 
 
 def helps(chat):
