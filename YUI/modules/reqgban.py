@@ -8,13 +8,13 @@ from pyrogram.types import (
     Message,
 )
 
-from TOGA import pbot as Client
-from TOGA import (
+from YUI import pbot as Client
+from YUI import (
     OWNER_ID as owner_id,
     OWNER_USERNAME as owner_usn,
     SUPPORT_CHAT as log,
 )
-from TOGA.utils.errors import capture_err
+from YUI.utils.errors import capture_err
 
 
 def content(msg: Message) -> [None, str]:
