@@ -4,9 +4,9 @@ import aiohttp
 import youtube_dl
 
 from pyrogram import filters
-from TOGA import pbot
+from YUI import pbot
 from youtube_search import YoutubeSearch
-from TOGA.utils.errors import capture_err
+from YUI.utils.errors import capture_err
 
 
 def time_to_seconds(time):
