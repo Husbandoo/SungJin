@@ -12,11 +12,11 @@ from telegram.ext import (
     CommandHandler,
 )
 
-import TOGA.modules.sql.users_sql as sql
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from TOGA.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from TOGA.modules.sql.users_sql import get_all_users
+import YUI.modules.sql.users_sql as sql
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from YUI.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from YUI.modules.sql.users_sql import get_all_users
 
 
 USERS_GROUP = 4
