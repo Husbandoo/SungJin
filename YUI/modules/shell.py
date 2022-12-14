@@ -1,7 +1,7 @@
 import subprocess
 
-from TOGA import LOGGER, dispatcher
-from TOGA.modules.helper_funcs.chat_status import dev_plus
+from YUI import LOGGER, dispatcher
+from YUI.modules.helper_funcs.chat_status import dev_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
