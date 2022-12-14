@@ -3,8 +3,8 @@
 import os
 import secureme
 
-from TOGA import telethn
-from TOGA.events import register
+from YUI import telethn
+from YUI.events import register
 
 @register(pattern="^/encrypt ?(.*)")
 async def hmm(event):
