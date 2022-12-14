@@ -265,7 +265,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
 @run_async
 @dev_plus
 @gloggable
-def removecopre(update: Update, context: CallbackContext) -> str:
+def removesudo(update: Update, context: CallbackContext) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
