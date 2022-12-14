@@ -3,8 +3,8 @@ import subprocess
 import sys
 from time import sleep
 
-from TOGA import dispatcher
-from TOGA.modules.helper_funcs.chat_status import dev_plus
+from YUI import dispatcher
+from YUI.modules.helper_funcs.chat_status import dev_plus
 from telegram import TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
@@ -49,7 +49,7 @@ def gitpull(update: Update, context: CallbackContext):
 @dev_plus
 def restart(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
-        "Starting a new instance and shutting down this one")
+        "Restarting Server...")
 
     os.system('restart.bat')
     os.execv('start.bat', sys.argv)
@@ -57,7 +57,7 @@ def restart(update: Update, context: CallbackContext):
 
 LEAVE_HANDLER = CommandHandler("leave", leave)
 GITPULL_HANDLER = CommandHandler("gitpull", gitpull)
-RESTART_HANDLER = CommandHandler("reboot", restart)
+RESTART_HANDLER = CommandHandler("restart", restart)
 
 dispatcher.add_handler(LEAVE_HANDLER)
 dispatcher.add_handler(GITPULL_HANDLER)
