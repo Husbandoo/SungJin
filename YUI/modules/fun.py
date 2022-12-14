@@ -3,12 +3,12 @@ import random
 import time
 
 from pyjokes import get_joke  
-from TOGA.events import register
-import TOGA.modules.fun_strings as fun_strings
-from TOGA import dispatcher, COTB
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.chat_status import is_user_admin
-from TOGA.modules.helper_funcs.extraction import extract_user
+from YUI.events import register
+import YUi.modules.fun_strings as fun_strings
+from YUI import dispatcher, COTB
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.chat_status import is_user_admin
+from YUI.modules.helper_funcs.extraction import extract_user
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ChatPermissions, ParseMode, Update)
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async
