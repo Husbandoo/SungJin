@@ -1,5 +1,5 @@
-from TOGA.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
-from TOGA import DRAGONS
+from YUI.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
+from YUI import DRAGONS
 from telethon.tl.types import ChannelParticipantsAdmins
 
 
