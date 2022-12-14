@@ -8,21 +8,21 @@ import importlib
 from functools import partial
 from pyrogram import Client , filters
 from pyrogram.types import Message
-import TOGA.modules.sql.welcome_sql as sql
-from TOGA import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS, BOT_USERNAME,
+import YUI.modules.sql.welcome_sql as sql
+from YUI import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS, BOT_USERNAME,
                           WOLVES, sw, dispatcher, EVENT_LOGS, JOIN_LOGGER, pgram)
-from TOGA.modules.helper_funcs.chat_status import (
+from YUI.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from TOGA.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from TOGA.modules.helper_funcs.msg_types import get_welcome_type
-from TOGA.modules.helper_funcs.string_handling import (
+from YUI.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from YUI.modules.helper_funcs.msg_types import get_welcome_type
+from YUI.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from TOGA.modules.log_channel import loggable
-from TOGA.modules.sql.global_bans_sql import is_user_gbanned
+from YUI.modules.log_channel import loggable
+from YUI.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -40,8 +40,8 @@ from telegram.ext import (
     run_async,
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
-from TOGA.modules.helper_funcs.misc import paginate_modules
-from TOGA.modules import ALL_MODULES
+from YUI.modules.helper_funcs.misc import paginate_modules
+from YUI.modules import ALL_MODULES
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -57,10 +57,10 @@ VALID_WELCOME_FORMATTERS = [
 
 TOGA_RESP = ""
 TOGA_DIS_WEL = ""
-TOGA_OWNER_WEL_IMG = ""
+YUI_OWNER_WEL_IMG = "https://telegra.ph/file/f3d1b6c43fc5f01cf97f3.jpg"
 TOGA_WELCOME = ""
-NETWORK_USERNAME = ""
-NETWORK_NAME = ""
+NETWORK_USERNAME = "ElitesNetwork"
+NETWORK_NAME = "Elites"
 
 ENUM_FUNC_MAP = {
     sql.Types.TEXT.value: dispatcher.bot.send_message,
@@ -195,7 +195,7 @@ def new_member(update: Update, context: CallbackContext):
 
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_video(
-                TOGA_OWNER_WEL_IMG, caption= "Behold !!! Owner 🔱 Of ＴＯＧＡ Joined Your Chat.",
+                YUI_OWNER_WEL_IMG, caption= "Behold !!! President 🔱 Of YUi Joined Your Chat.",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
@@ -247,10 +247,10 @@ def new_member(update: Update, context: CallbackContext):
                   [                  
                        InlineKeyboardButton(
                              text="Support 🍄",
-                             url=f"https://t.me/BotsAtelier"),
+                             url=f"https://t.me/YuiSupport"),
                        InlineKeyboardButton(
                              text="{Chit Chat🦋}",
-                             url="https://t.me/Anicademia")
+                             url="https://t.me/Friendszonegroup0")
                      ],
                      [                  
                        InlineKeyboardButton(
@@ -262,7 +262,7 @@ def new_member(update: Update, context: CallbackContext):
     )
                 continue
 
-            elif new_mem.id == 5163444566:
+            elif new_mem.id == 5139604444:
                 update.effective_message.reply_photo(
                 TOGA_RESP, caption= "Ohh damn, Legend Arrives\nHow are you sir",
                     reply_to_message_id=reply,
