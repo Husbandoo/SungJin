@@ -7,9 +7,9 @@ import json
 from telegram import ChatAction
 from telegram.ext import run_async
 
-from TOGA import dispatcher
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.alternate import typing_action, send_action
+from YUI import dispatcher
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.alternate import typing_action, send_action
 
 @send_action(ChatAction.RECORD_AUDIO)
 def gtts(update, context):
