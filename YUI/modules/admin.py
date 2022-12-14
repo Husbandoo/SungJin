@@ -12,9 +12,9 @@ from telethon.errors import *
 from telethon.tl import *
 from telethon import *
 
-from TOGA import DRAGONS, DEV_USERS, OWNER_ID, dispatcher, telethn as bot
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.chat_status import (
+from YUI import DRAGONS, DEV_USERS, OWNER_ID, dispatcher, telethn as bot
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.chat_status import (
     bot_admin,
     can_pin,
     can_promote,
@@ -27,12 +27,12 @@ from TOGA.modules.helper_funcs.chat_status import (
     can_manage_voice_chats,
 )
 
-from TOGA.modules.helper_funcs.extraction import (
+from YUI.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from TOGA.modules.log_channel import loggable
-from TOGA.modules.helper_funcs.alternate import send_message
+from YUI.modules.log_channel import loggable
+from YUI.modules.helper_funcs.alternate import send_message
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
