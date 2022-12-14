@@ -3,10 +3,10 @@ from pyrogram import filters
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 
-from TOGA import pbot as app, BOT_ID
-from TOGA.utils.errors import capture_err
-from TOGA.utils.permissions import adminsOnly
-from KACCHAN.kac import (
+from YUI import pbot as app, BOT_ID
+from YUI.utils.errors import capture_err
+from YUI.utils.permissions import adminsOnly
+from Zoro.kurumi import (
     alpha_to_int,
     get_karma,
     get_karmas,
@@ -16,8 +16,8 @@ from KACCHAN.kac import (
     karma_on,
     update_karma,
 )      
-from TOGA.utils.filter_groups import karma_negative_group, karma_positive_group
-from TOGA import arq
+from YUI.utils.filter_groups import karma_negative_group, karma_positive_group
+from YUI import arq
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|pro|cool|good|👍)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|noob|weak)$"
