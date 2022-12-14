@@ -1,5 +1,5 @@
 from telethon import events
-from TOGA import telethn
+from YUI import telethn
 
 
 def register(**args):
