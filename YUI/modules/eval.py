@@ -5,7 +5,7 @@ import re
 import html
 import subprocess
 from io import StringIO, BytesIO
-from TOGA import pgram, DEV_USERS
+from YUI import pgram, DEV_USERS
 from pyrogram import filters
 
 
