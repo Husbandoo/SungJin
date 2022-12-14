@@ -5,8 +5,8 @@ import textwrap
 import bs4
 import jikanpy
 import requests
-from TOGA import dispatcher
-from TOGA.modules.disable import DisableAbleCommandHandler
+from YUI import dispatcher
+from YUI.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
