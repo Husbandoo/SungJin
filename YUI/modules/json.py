@@ -6,8 +6,8 @@ from telethon import types
 from telethon.tl import functions, types
 
 
-from TOGA.events import register
-from TOGA import telethn
+from YUI.events import register
+from YUI import telethn
 
 
 async def is_register_admin(chat, user):
