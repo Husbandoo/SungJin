@@ -9,9 +9,9 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
-from TOGA import pgram, aiohttpsession
-from TOGA.utils.errors import capture_err
-from TOGA.utils.pastebin import paste
+from YUI import pgram, aiohttpsession
+from YUI.utils.errors import capture_err
+from YUI.utils.pastebin import paste
 
 pattern = re.compile(
     r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$"
