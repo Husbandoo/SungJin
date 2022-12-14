@@ -2,9 +2,9 @@ import sre_constants
 
 import regex
 import telegram
-from TOGA import LOGGER, dispatcher
-from TOGA.modules.disable import DisableAbleMessageHandler
-from TOGA.modules.helper_funcs.regex_helper import (infinite_loop_check)
+from YUI import LOGGER, dispatcher
+from YUI.modules.disable import DisableAbleMessageHandler
+from YUI.modules.helper_funcs.regex_helper import (infinite_loop_check)
 from telegram import Update
 from telegram.ext import CallbackContext, Filters, run_async
 
