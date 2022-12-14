@@ -49,7 +49,7 @@ class Config(object):
     ERROR_LOGS="-1001692375111" 
     BOT_NAME="YuigaRobot"
     STRICT_GBAN=True
-    REDIS_URL="redis://default:e06wyhyZUB0UFKbViNOzbsY5u7X2DoaY@http://redis-17063.c8.us-east-1-2.ec2.cloud.redislabs.com:17063/YuigaRobot"
+    REDIS_URL="redis://default:e06wyhyZUB0UFKbViNOzbsY5u7X2DoaY@redis-17063.c8.us-east-1-2.ec2.cloud.redislabs.com:17063"
     UPDATE_CHANNEL="x"
     MONGO_DB_URI="mongodb+srv://2ndlmao:serena12@cluster0.ymnv92k.mongodb.net/?retryWrites=true&w=majority"
     BOT_USERNAME="YuigaRobot"
