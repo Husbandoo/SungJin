@@ -7,9 +7,9 @@ import time
 import psutil
 from pyrogram import filters
 
-from TOGA import (StartTime, DEV_USERS, BOT_NAME, pgram)
-import TOGA.utils.formatter as formatter
-import TOGA.modules.sql.users_sql as sql
+from YUI import (StartTime, DEV_USERS, BOT_NAME, pgram)
+import YUI.utils.formatter as formatter
+import YUI.modules.sql.users_sql as sql
 
 
 
