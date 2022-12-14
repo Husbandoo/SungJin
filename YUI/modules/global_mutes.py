@@ -8,12 +8,12 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
-import TOGA.modules.sql.global_mutes_sql as sql
-from TOGA import dispatcher, OWNER_ID, DEV_USERS,DRAGONS,DEMONS, TIGERS,STRICT_GMUTE
-from TOGA.modules.helper_funcs.chat_status import user_admin, is_user_admin
-from TOGA.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from TOGA.modules.helper_funcs.filters import CustomFilters
-from TOGA.modules.sql.users_sql import get_all_chats
+import YUI.modules.sql.global_mutes_sql as sql
+from YUI import dispatcher, OWNER_ID, DEV_USERS,DRAGONS,DEMONS, TIGERS,STRICT_GMUTE
+from YUI.modules.helper_funcs.chat_status import user_admin, is_user_admin
+from YUI.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from YUI.modules.helper_funcs.filters import CustomFilters
+from YUI.modules.sql.users_sql import get_all_chats
 
 GMUTE_ENFORCE_GROUP = 6
 
