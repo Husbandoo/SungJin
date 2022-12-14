@@ -1,9 +1,9 @@
 from time import sleep
 
-import TOGA.modules.sql.global_bans_sql as gban_sql
-import TOGA.modules.sql.users_sql as user_sql
-from TOGA import DEV_USERS, OWNER_ID, dispatcher
-from TOGA.modules.helper_funcs.chat_status import dev_plus
+import YUI.modules.sql.global_bans_sql as gban_sql
+import YUI.modules.sql.users_sql as user_sql
+from YUI import DEV_USERS, OWNER_ID, dispatcher
+from YUI.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
