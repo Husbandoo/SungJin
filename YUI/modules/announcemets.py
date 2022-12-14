@@ -6,10 +6,10 @@ from telegram.ext import CallbackContext
 from telegram.chatmemberupdated import ChatMemberUpdated
 from telegram.ext.chatmemberhandler import ChatMemberHandler
 
-from TOGA import dispatcher
-from TOGA.modules.log_channel import loggable
+from YUI import dispatcher
+from YUI.modules.log_channel import loggable
 
-import TOGA.modules.sql.logger_sql as sql
+import YUI.modules.sql.logger_sql as sql
 
 def extract_status_change(chat_member_update: ChatMemberUpdated):
     try:
