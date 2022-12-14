@@ -1,6 +1,6 @@
 
 
-from TOGA import REDIS
+from YUI import REDIS
 
 
 # AFK
