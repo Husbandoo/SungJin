@@ -1,7 +1,7 @@
 import threading
 
-from TOGA import dispatcher
-from TOGA.modules.sql import BASE, SESSION
+from YUI import dispatcher
+from YUI.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
