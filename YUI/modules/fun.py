@@ -4,7 +4,7 @@ import time
 
 from pyjokes import get_joke  
 from YUI.events import register
-import YUi.modules.fun_strings as fun_strings
+import YUI.modules.fun_strings as fun_strings
 from YUI import dispatcher, COTB
 from YUI.modules.disable import DisableAbleCommandHandler
 from YUI.modules.helper_funcs.chat_status import is_user_admin
