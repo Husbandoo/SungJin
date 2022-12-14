@@ -22,7 +22,7 @@ from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
     
-from TOGA import (
+from YUI import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -36,18 +36,18 @@ from TOGA import (
     SUPPORT_CHAT,
     UPDATE_CHANNEL,
 )
-from TOGA.__main__ import STATS, TOKEN, USER_INFO
-from TOGA.modules.sql import SESSION
-import TOGA.modules.sql.userinfo_sql as sql
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.sql.global_bans_sql import is_user_gbanned
-from TOGA.modules.redis.afk_redis import is_user_afk, afk_reason
-from TOGA.modules.sql.users_sql import get_user_num_chats
-from TOGA.modules.helper_funcs.chat_status import sudo_plus
-from TOGA.modules.helper_funcs.extraction import extract_user
-from TOGA import telethn
+from YUI.__main__ import STATS, TOKEN, USER_INFO
+from YUI.modules.sql import SESSION
+import YUI.modules.sql.userinfo_sql as sql
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.sql.global_bans_sql import is_user_gbanned
+from YUI.modules.redis.afk_redis import is_user_afk, afk_reason
+from YUI.modules.sql.users_sql import get_user_num_chats
+from YUI.modules.helper_funcs.chat_status import sudo_plus
+from YUI.modules.helper_funcs.extraction import extract_user
+from YUI import telethn
 
-TOGA_STATS_PIC = "https://telegra.ph/file/a1f6fc767b7231387d14b.jpg"
+YUI_STATS_PIC = "https://telegra.ph/file/781767205a085fd3e4b35.jpg"
 
 def no_by_per(totalhp, percentage):
     """
@@ -301,22 +301,22 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n⍣ 𝐓𝐎𝐆𝐀’𝐳 𝐂𝐑𝐈𝐌𝐄 𝐏𝐀𝐑𝐓𝐍𝐄𝐑 ! 🦄..."
+        text += "\n\n⍣  President 👑 "
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\n⍣ 𝐓𝐎𝐆𝐀’𝐳 𝐂𝐑𝐈𝐌𝐄 𝐏𝐀𝐑𝐓𝐍𝐄𝐑 ! 🦄..."
+        text += "\n\n⍣ Vice President 👑"
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\n⍣ 𝐄𝐢𝐠𝐡𝐭 𝐏𝐫𝐞𝐜𝐞𝐩𝐭𝐬 𝐨𝐟 𝐃𝐞𝐚𝐭𝐡 🥀 !"
+        text += "\n\n⍣ Co Vice President 🥀 !"
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\n⍣ 𝐕𝐢𝐥𝐥𝐚𝐧'𝐬 𝐀𝐬𝐬𝐞𝐭𝐬 🖤 !"
+        text += "\n\n⍣ Black Hearts 🖤 !"
         disaster_level_present = True
     elif user.id in TIGERS:
         text += "\n\n⍣ 𝐍Ø𝐌𝐔 🦍 ..!"
         disaster_level_present = True
-    elif user.id == 5163444566:
-        text += "\n\n• MY BRO"
+    elif user.id == 1936119750:
+        text += "\n\n• God 👑"
         disaster_level_present = True
     elif user.id in WOLVES:
         text += "\n\n⍣ 𝐐𝐔𝐈𝐑𝐊𝐋𝐄𝐒𝐒 ! 🐣"
@@ -430,7 +430,7 @@ def set_about_me(update: Update, context: CallbackContext):
 def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     botuptime = get_readable_time((time.time() - StartTime))
-    status = "*═══「 Toga Statistics 」*\n\n"
+    status = "*═══「 Yui Statistics 」*\n\n"
     status += "*•  System Start time:* " + str(uptime) + "\n"
     uname = platform.uname()
     status += "*•  System:* " + str(uname.system) + "\n"
@@ -448,19 +448,19 @@ def stats(update, context):
     status += "*•  Uptime:* " + str(botuptime) + "\n"
     try:
         update.effective_message.reply_photo(
-            TOGA_STATS_PIC,
+            YUI_STATS_PIC,
             status
             + "\n*𝔗𝔬𝔤𝔞 𝔖𝔱𝔞𝔱𝔦𝔰𝔱𝔦𝔠𝔰*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n[Support](https://t.me/TogaSupport) | [Updates](https://t.me/TogaUpdates)\n\n"
-            + "\n╘══「 by [∆nicade](https://t.me/Anicade) 」\n",
+            + f"\n\n[Support](https://t.me/YuiSupport) | [Updates](https://t.me/TogaUpdates)\n\n"
+            + "\n╘══「 by [Elites](https://t.me/ElitesNetwork) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="Chat GC",
-                             url="t.me/Anicademia")
+                             text="Main Chat",
+                             url="t.me/Friendszonegroup0")
                      ] 
                 ]
             ),
@@ -473,17 +473,17 @@ def stats(update, context):
                         "\n*𝔗𝔬𝔤𝔞 𝔖𝔱𝔞𝔱𝔦𝔰𝔱𝔦𝔠𝔰*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n[Support](https://t.me/togasupport) | [Updates](https://t.me/togaUpdates)\n\n"
+                    + f"\n\n[Support](https://t.me/yuisupport) | [Updates](https://t.me/x)\n\n"
                 )
-                + "══「 by [∆nicade](https://t.me/anicade) 」\n"
+                + "══「 by [Elites](https://t.me/ElitesNetwork) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="Chat GC",
-                             url="t.me/anicademia")
+                             text="Main Chat",
+                             url="t.me/Friendszonegroup0")
                      ] 
                 ]
             ),
@@ -491,9 +491,9 @@ def stats(update, context):
 
 
 def stats1(update: Update, context: CallbackContext):
-    stats = "🌐 <b>⌈ Current Toga Stats ⌋</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "🌐 <b>⌈ Current Yui Stats ⌋</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    update.effective_message.reply_photo(TOGA_STATS_PIC,caption=result, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_photo(YUI_STATS_PIC,caption=result, parse_mode=ParseMode.HTML)
 
 
 def about_bio(update: Update, context: CallbackContext):
