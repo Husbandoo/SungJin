@@ -5,17 +5,17 @@ from telegram import ParseMode, Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-import TOGA.modules.sql.notes_sql as sql
-from TOGA import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER
-from TOGA.__main__ import DATA_IMPORT
-from TOGA.modules.helper_funcs.chat_status import user_admin
-from TOGA.modules.helper_funcs.alternate import typing_action
+import YUI.modules.sql.notes_sql as sql
+from YUI import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER
+from YUI.__main__ import DATA_IMPORT
+from YUI.modules.helper_funcs.chat_status import user_admin
+from YUI.modules.helper_funcs.alternate import typing_action
 
-import TOGA.modules.sql.rules_sql as rulessql
-import TOGA.modules.sql.blacklist_sql as blacklistsql
-from TOGA.modules.sql import disable_sql as disabledsql
-import TOGA.modules.sql.locks_sql as locksql
-from TOGA.modules.connection import connected
+import YUI.modules.sql.rules_sql as rulessql
+import YUI.modules.sql.blacklist_sql as blacklistsql
+from YUI.modules.sql import disable_sql as disabledsql
+import YUI.modules.sql.locks_sql as locksql
+from YUI.modules.connection import connected
 
 
 @run_async
