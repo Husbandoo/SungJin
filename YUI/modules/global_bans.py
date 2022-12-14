@@ -14,9 +14,9 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import TOGA.modules.sql.global_bans_sql as sql
-from TOGA.modules.sql.users_sql import get_user_com_chats
-from TOGA import (
+import YUI.modules.sql.global_bans_sql as sql
+from YUI.modules.sql.users_sql import get_user_com_chats
+from YUI import (
     DEV_USERS,
     EVENT_LOGS,
     OWNER_ID,
@@ -30,16 +30,16 @@ from TOGA import (
     sw,
     dispatcher,
 )
-from TOGA.modules.helper_funcs.chat_status import (
+from YUI.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     user_admin,
 )
-from TOGA.modules.helper_funcs.extraction import (
+from YUI.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from TOGA.modules.helper_funcs.misc import send_to_list
+from YUI.modules.helper_funcs.misc import send_to_list
 
 GBAN_ENFORCE_GROUP = 6
 
