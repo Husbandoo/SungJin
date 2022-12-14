@@ -3,18 +3,18 @@ import json
 import os
 from typing import Optional
 
-from TOGA import (DEV_USERS, OWNER_ID, DRAGONS, SUPPORT_CHAT, DEMONS,
+from YUI import (DEV_USERS, OWNER_ID, DRAGONS, SUPPORT_CHAT, DEMONS,
                           TIGERS, WOLVES, dispatcher)
-from TOGA.modules.helper_funcs.chat_status import (dev_plus, sudo_plus,
+from YUI.modules.helper_funcs.chat_status import (dev_plus, sudo_plus,
                                                            whitelist_plus)
-from TOGA.modules.helper_funcs.extraction import extract_user
-from TOGA.modules.log_channel import gloggable
+from YUI.modules.helper_funcs.extraction import extract_user
+from YUI.modules.log_channel import gloggable
 from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(),
-                                   'TOGA/elevated_users.json')
+                                   'YUI/elevated_users.json')
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
@@ -33,7 +33,7 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 @run_async
 @dev_plus
 @gloggable
-def addsudo(update: Update, context: CallbackContext) -> str:
+def addcopre(update: Update, context: CallbackContext) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
@@ -55,12 +55,12 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         return ""
 
     if user_id in DEMONS:
-        rt += "Requested HQ to promote a member to Dragon's level.."
+        rt += "Requested HQ to promote a member to Co Vice President level.."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested HQ to promote a Wolf-ranker to Dragon's level."
+        rt += "Requested HQ to promote a Wolf-ranker to Co Vice President level."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -71,7 +71,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully set level of {} to Dragons!".format(
+        rt + "\nSuccessfully set level of {} to Co Vice President".format(
             user_member.first_name))
 
     log_message = (
@@ -265,7 +265,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
 @run_async
 @dev_plus
 @gloggable
-def removesudo(update: Update, context: CallbackContext) -> str:
+def removecopre(update: Update, context: CallbackContext) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
@@ -484,7 +484,7 @@ def supportlist(update: Update, context: CallbackContext):
 def sudolist(update: Update, context: CallbackContext):
     bot = context.bot
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known Precepts 🥀:</b>\n"
+    reply = "<b>Co Vice Presidents 🥀:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -500,7 +500,7 @@ def sudolist(update: Update, context: CallbackContext):
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>Known Partners 🔱:</b>\n"
+    reply = "<b>Vice Presidents 🔱:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
@@ -525,7 +525,7 @@ WHITELISTLIST_HANDLER = CommandHandler(["dekus"],
                                        whitelistlist)
 TIGERLIST_HANDLER = CommandHandler(["nomus"], tigerlist)
 SUPPORTLIST_HANDLER = CommandHandler(["Assets"], supportlist)
-SUDOLIST_HANDLER = CommandHandler(["precepts"], sudolist)
+SUDOLIST_HANDLER = CommandHandler(["copres"], sudolist)
 DEVLIST_HANDLER = CommandHandler(["partners"], devlist)
 
 dispatcher.add_handler(SUDO_HANDLER)
