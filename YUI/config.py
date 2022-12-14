@@ -3,7 +3,7 @@ import os
 
 
 def get_user_list(config, key):
-    with open('{}/TOGA/{}'.format(os.getcwd(), config),
+    with open('{}/YUI/{}'.format(os.getcwd(), config),
               'r') as json_file:
         return json.load(json_file)[key]
 
@@ -40,19 +40,19 @@ class Config(object):
     SPAMWATCH_API=""
     WALL_API=""
     DEMONS=[5163444566]
-    SUPPORT_CHAT="TogaSupport"
-    OWNER_USERNAME="PervertSenpai"
+    SUPPORT_CHAT="Yuigasupport"
+    OWNER_USERNAME="dragoneyegaming"
     DONATION_LINK="lwdaalay"
     EVENT_LOGS="-1001745971242" 
     OWNER_ID="5163444566" 
     TIME_API_KEY=""
     ERROR_LOGS="-1001745971242" 
-    BOT_NAME="toga_robot"
+    BOT_NAME="YuigaRobot"
     STRICT_GBAN=True
     REDIS_URL="redis://betatoga:Betatoga123+@redis-15793.c241.us-east-1-4.ec2.cloud.redislabs.com:15793"
-    UPDATE_CHANNEL="TogaUpdates"
+    UPDATE_CHANNEL="x"
     MONGO_DB_URI="mongodb+srv://betatoga:Betatoga123+@betatoga.rrk13ss.mongodb.net/?retryWrites=true&w=majority"
-    BOT_USERNAME="Toga_Robot"
+    BOT_USERNAME="YuigaRobot"
     REM_BG_API_KEY=""
     CASH_API_KEY=""
     AI_API_KEY=""
@@ -61,9 +61,9 @@ class Config(object):
     LOG_GROUP_ID="-1001745971242"
     STRICT_GMUTE=False
     SPAMWATCH_API=""
-    OWNER_NAME="KACCHAN"
+    OWNER_NAME="ZoRo"
     BANCODES=""
-    REPOSITORY="GitHub.com/kac-chan/toga"
+    REPOSITORY="GitHub.com/princesssgirlxd/yuigahama"
     ARQ_API_KEY=""
     ARQ_API_URL=""
     COTB=""
