@@ -13,23 +13,23 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from TOGA import DRAGONS, LOGGER, dispatcher
-from TOGA.modules.connection import connected
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.alternate import send_message, typing_action
-from TOGA.modules.helper_funcs.chat_status import user_admin
-from TOGA.modules.helper_funcs.extraction import extract_text
-from TOGA.modules.helper_funcs.filters import CustomFilters
-from TOGA.modules.helper_funcs.handlers import MessageHandlerChecker
-from TOGA.modules.helper_funcs.misc import build_keyboard_parser
-from TOGA.modules.helper_funcs.msg_types import get_filter_type
-from TOGA.modules.helper_funcs.string_handling import (
+from YUI import DRAGONS, LOGGER, dispatcher
+from YUI.modules.connection import connected
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.alternate import send_message, typing_action
+from YUI.modules.helper_funcs.chat_status import user_admin
+from YUI.modules.helper_funcs.extraction import extract_text
+from YUI.modules.helper_funcs.filters import CustomFilters
+from YUI.modules.helper_funcs.handlers import MessageHandlerChecker
+from YUI.modules.helper_funcs.misc import build_keyboard_parser
+from YUI.modules.helper_funcs.msg_types import get_filter_type
+from YUI.modules.helper_funcs.string_handling import (
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
     split_quotes,
 )
-from TOGA.modules.sql import cust_filters_sql as sql
+from YUI.modules.sql import cust_filters_sql as sql
 
 HANDLER_GROUP = 10
 
