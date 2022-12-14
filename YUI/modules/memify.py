@@ -4,16 +4,16 @@ import textwrap
 
 import os
 
-from TOGA.events import register
+from YUI.events import register
 
-from TOGA import (
+from YUI import (
     LOGGER,
     TEMP_DOWNLOAD_DIRECTORY
     )
 
 
 
-from TOGA import telethn as bot 
+from YUI import telethn as bot 
 
 
 @register(pattern="^/mmf ?(.*)")
