@@ -6,11 +6,11 @@ from telegram import ParseMode, Update, ChatPermissions
 from telegram.ext import CallbackContext, run_async
 from telegram.error import BadRequest
 
-import TOGA.modules.game_strings as game_strings
-from TOGA import dispatcher
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.chat_status import (is_user_admin)
-from TOGA.modules.helper_funcs.extraction import extract_user
+import YUI.modules.game_strings as game_strings
+from YUI import dispatcher
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.chat_status import (is_user_admin)
+from YUI.modules.helper_funcs.extraction import extract_user
 
 
 @run_async
