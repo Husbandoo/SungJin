@@ -1,10 +1,10 @@
-from TOGA import MONGO_DB_URI
+from YUI import MONGO_DB_URI
 from typing import Dict, List, Union
 from pymongo import MongoClient
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
-db = client["TOGA"]
+db = client["YUI"]
 
 coupledb = db.couple
 karmadb = db.karma
