@@ -16,26 +16,26 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from TOGA import dispatcher  
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.alternate import typing_action
-from TOGA.modules.helper_funcs.chat_status import (
+from YUI import dispatcher  
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.alternate import typing_action
+from YUI.modules.helper_funcs.chat_status import (
     is_user_admin,
     bot_admin,
     user_admin_no_reply,
     user_admin,
     can_restrict,
 )
-from TOGA.modules.helper_funcs.extraction import (
+from YUI.modules.helper_funcs.extraction import (
     extract_text,
     extract_user_and_text,
     extract_user,
 )
-from TOGA.modules.helper_funcs.filters import CustomFilters
-from TOGA.modules.helper_funcs.misc import split_message
-from TOGA.modules.helper_funcs.string_handling import split_quotes
-from TOGA.modules.log_channel import loggable
-from TOGA.modules.sql import warns_sql as sql
+from YUI.modules.helper_funcs.filters import CustomFilters
+from YUI.modules.helper_funcs.misc import split_message
+from YUI.modules.helper_funcs.string_handling import split_quotes
+from YUI.modules.log_channel import loggable
+from YUI.modules.sql import warns_sql as sql
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
