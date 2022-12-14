@@ -5,9 +5,9 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from TOGA import StartTime, dispatcher
-from TOGA.modules.helper_funcs.chat_status import sudo_plus
-from TOGA.modules.disable import DisableAbleCommandHandler
+from YUI import StartTime, dispatcher
+from YUI.modules.helper_funcs.chat_status import sudo_plus
+from YUI.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
