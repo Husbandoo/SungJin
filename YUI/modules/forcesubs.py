@@ -10,10 +10,10 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from TOGA import DRAGONS as SUDO_USERS
-from TOGA import pbot
-from TOGA.modules.sql import forceSubscribe_sql as sql
-from TOGA.modules.language import gs
+from YUI import DRAGONS as SUDO_USERS
+from YUI import pbot
+from YUI.modules.sql import forceSubscribe_sql as sql
+from YUI.modules.language import gs
 
 logging.basicConfig(level=logging.INFO)
 
