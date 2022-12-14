@@ -3,8 +3,8 @@ from datetime import datetime
 
 from pyrogram import filters
 
-from TOGA import pbot
-from KACCHAN.kac import get_couple, save_couple
+from YUI import pbot
+from Zoro.kurumi import get_couple, save_couple
 
 def dt():
     now = datetime.now()
