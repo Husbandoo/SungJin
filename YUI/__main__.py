@@ -12,16 +12,16 @@ from typing import List
 from typing import Optional
 from pyrogram import Client, idle, filters
 
-import TOGA.modules.sql.users_sql as sql
-from TOGA.modules.sudoers import bot_sys_stats as bss
+import YUI.modules.sql.users_sql as sql
+from YUI.modules.sudoers import bot_sys_stats as bss
 
-from TOGA import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
+from YUI import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
                           OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK, BOT_NAME,
                           SUPPORT_CHAT, dispatcher, StartTime, telethn, updater, pgram, pbot)
 
-from TOGA.modules import ALL_MODULES
-from TOGA.modules.helper_funcs.chat_status import is_user_admin
-from TOGA.modules.helper_funcs.misc import paginate_modules
+from YUI.modules import ALL_MODULES
+from YUI.modules.helper_funcs.chat_status import is_user_admin
+from YUI.modules.helper_funcs.misc import paginate_modules
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update)
 from telegram.error import (BadRequest, ChatMigrated, NetworkError,
@@ -30,6 +30,8 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
+
+OWNER_USERNAME  = "DragonEyeGaming"
 
 
 def get_readable_time(seconds: int) -> str:
@@ -60,21 +62,23 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 PM_START_TEXT = """
-*Heyaa.! {}, I'M Toga ♡*
-*I'M Affiliated With The League Of Villains.*
-*I'M An Group Management Bot, Built For Weebs.*
-• *Alive Since* - {}
-*Use /help To Go Through My Commands..*
+*Kᴏɴɪᴄʜɪᴡᴀ {},*
+*I'ᴍ Yᴜɪɢᴀʜᴀᴍᴀ Yᴜɪ, A Aɴɪᴍᴇ Tʜᴇᴍᴇᴅ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+❍ *Uᴘᴛɪᴍᴇ:* {}
+❍ *Oᴡɴᴇʀ:* {OWNER_USERNAME}
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+*Hɪᴛ Tʜᴇ /help Tᴏ Gᴇᴛ Lɪsᴛ Oғ Mʏ Cᴏᴍᴍᴀɴᴅs.××*
 """
 
 buttons = [
     [
                         InlineKeyboardButton(
                              text="+Add Me",
-                             url="https://t.me/toga_robot?startgroup=true"),
+                             url="https://t.me/YuigaRobot?startgroup=true"),
                         InlineKeyboardButton(
                              text="Support",
-                             url="https://t.me/Togasupport"),
+                             url="https://t.me/yuigasupport"),
                     ],
                   [
                         InlineKeyboardButton(
@@ -82,12 +86,12 @@ buttons = [
                              callback_data="help_back"),
                         InlineKeyboardButton(
                              text="Dev",
-                             url="https://t.me/izuya"),
+                             url="https://t.me/dragoneyegaming"),
                     ],
                   [
                         InlineKeyboardButton(
                              text="Global Logs",
-                             url="https://t.me/botslogger"),
+                             url="https://t.me/yuilogger"),
                     ],
     ]
 
@@ -107,7 +111,7 @@ ABOUT2 = """
 """
 
 ABOUT3 = """
-Hello [{}], My name is *TOGA*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+Hello [{}], My name is 💕 Yui. A Powerful Telegram Group Management Bot built to help you manage Group easily.
 ‣ I can Restrict Users.
 ‣ I can Greet Users with customizable welcome message and even set a group rules
 ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
@@ -128,18 +132,18 @@ Main commands available :
 For all command use / or !
 """
 
-TOGA_PIC = ""
+YUI_PIC = ""
 
-TOGA_N_IMG = (
+YUI_N_IMG = (
   "",
   ""
 )
 
-TOGA_VID = ""
+YUI_VID = ""
 
-PM_PHOTO = "https://telegra.ph/file/839ffd41ee4639bb06122.jpg"
+PM_PHOTO = "https://telegra.ph/file/2f7fe4e71e96632e48905.mp4"
 
-TOGA_DISPACHER_PIC = ""
+YUI_DISPACHER_PIC = ""
 
 DONATE_STRING = """No Need :)"""
 
@@ -154,7 +158,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("TOGA.modules." +
+    imported_module = importlib.import_module("YUI.modules." +
                                               module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
@@ -275,7 +279,7 @@ def start(update: Update, context: CallbackContext):
         first = update.effective_user.full_name
         chat = update.effective_chat.title
         update.effective_message.reply_video(
-                video="https://telegra.ph/file/8421c7d73f44695378042.mp4",
+                video="https://telegra.ph/file/f83f9d160ff923ee56bba.mp4",
                 caption="Started !‎‎‎‎‎‎‎‎ㅤ",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
@@ -283,10 +287,10 @@ def start(update: Update, context: CallbackContext):
                   [
                        InlineKeyboardButton(
                              text="Support",
-                             url="t.me/Togasupport"),
+                             url="t.me/yuigasupport"),
                        InlineKeyboardButton(
                              text="Updates",
-                             url="t.me/togaUpdates")
+                             url="t.me/x")
                      ]
                 ]
             ),
@@ -356,7 +360,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="⬅ Bα¢к", callback_data="help_back"),
-                      InlineKeyboardButton(text="⬅ Hσмє", callback_data="toga_back")]]
+                      InlineKeyboardButton(text="⬅ Hσмє", callback_data="yui_back")]]
                 ),
             )
 
@@ -415,11 +419,11 @@ def about_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/togaspport"),
-                    InlineKeyboardButton(text="Updates", url="t.me/togaUpdates"),
+                    InlineKeyboardButton(text="Support", url="t.me/yuisupport"),
+                    InlineKeyboardButton(text="Updates", url="t.me/x"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="toga_")
+                    InlineKeyboardButton(text="Back", callback_data="yui_")
                  ],
                 ]
             ),
@@ -437,8 +441,8 @@ def repo_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Source Code", url=""),
-                    InlineKeyboardButton(text="Developer", url="t.me/PervertSenpai"),
+                    InlineKeyboardButton(text="Source Code", url="t.me/dragoneyegaming"),
+                    InlineKeyboardButton(text="Developer", url="t.me/dragoneyegaming"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="sumi_")
@@ -458,7 +462,7 @@ def sumi_callback_data(update, context):
     query = update.callback_query
     bot = context.bot
     uptime = get_readable_time((time.time() - StartTime))
-    if query.data == "toga_":
+    if query.data == "yui_":
         query.message.edit_caption(
             ABOUT3.format(update.effective_user.first_name, update.effective_user.id, escape_markdown(context.bot.first_name)),
             parse_mode=ParseMode.MARKDOWN,
@@ -466,19 +470,19 @@ def sumi_callback_data(update, context):
                 [
                  [
                     InlineKeyboardButton(text="Guide", callback_data="about_"),
-                    InlineKeyboardButton(text="Developer", url="t.me/PervertSenpai"),
+                    InlineKeyboardButton(text="Developer", url="t.me/dragoneyegaming"),
                  ],
                  [
                     InlineKeyboardButton(text="Support", callback_data="about_"),
                     InlineKeyboardButton(text="Source Code", callback_data="repo_"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="toga_back")
+                    InlineKeyboardButton(text="Back", callback_data="yui_back")
                  ],
                 ]
             ),
         )
-    elif query.data == "toga_back":
+    elif query.data == "yui_back":
         first_name = update.effective_user.full_name
         id = update.effective_user.id
         query.message.edit_caption(
@@ -503,7 +507,7 @@ def get_help(update: Update, context: CallbackContext):
             module = args[1].lower()
             first_name = update.effective_user.full_name
             update.effective_message.reply_photo(
-            random.choice(TOGA_N_IMG), caption= f"Hey {first_name}, Click the Button Below to get help of {module.capitalize()}",
+            random.choice(YUI_N_IMG), caption= f"Hey {first_name}, Click the Button Below to get help of {module.capitalize()}",
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
@@ -521,7 +525,7 @@ def get_help(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text=" Click here", url="https://t.me/toga_robot?start=help")
+                  InlineKeyboardButton(text=" Click here", url="https://t.me/YuigaRobot?start=help")
                   ]
                 ]
             ),
@@ -678,7 +682,7 @@ def get_settings(update: Update, context: CallbackContext):
         if is_user_admin(chat, user.id):
             text = "Click here to get this chat's settings, as well as yours."
             msg.reply_photo(
-                random.choice(TOGA_N_IMG), caption=text,
+                random.choice(YUI_N_IMG), caption=text,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
                         text="Settings",
@@ -703,7 +707,7 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 5163444566 and DONATION_LINK:
+        if OWNER_ID != 1936119750 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -748,7 +752,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             name = dispatcher.bot.first_name
-            m = dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", TOGA_DISPACHER_PIC, caption=f"I'm Online Again", parse_mode=ParseMode.MARKDOWN,
+            m = dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", YUI_DISPACHER_PIC, caption=f"I'm Online Again", parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                 ]
@@ -756,7 +760,7 @@ def main():
         )
         except Unauthorized:
             LOGGER.warning(
-                "Toga can't able to send message to support_chat, go and check!")
+                "Yui can't able to send message to support_chat, go and check!")
         except BadRequest as e:
             LOGGER.warning(e.message)
 
@@ -772,7 +776,7 @@ def main():
         settings_button, pattern=r"stngs_")
 
     about_callback_handler = CallbackQueryHandler(about_callback_data, pattern=r"about_")
-    sumi_callback_handler = CallbackQueryHandler(sumi_callback_data, pattern=r"toga_")
+    sumi_callback_handler = CallbackQueryHandler(sumi_callback_data, pattern=r"yui_")
     repo_callback_handler = CallbackQueryHandler(repo_callback_data, pattern=r"repo_")
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate,
@@ -802,7 +806,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Toga Is Online")
+        LOGGER.info("Yui Is Online")
         allowed_updates = ['message', 'edited_message', 'callback_query', 'callback_query', 'my_chat_member',
                            'chat_member', 'chat_join_request', 'channel_post', 'edited_channel_post', 'inline_query']
         updater.start_polling(
