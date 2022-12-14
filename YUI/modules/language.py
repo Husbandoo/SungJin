@@ -4,10 +4,10 @@ from collections.abc import Iterable
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 
-from TOGA import dispatcher
-import TOGA.modules.sql.language_sql as sql
-from TOGA.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from TOGA.langs import get_string, get_languages, get_language
+from YUI import dispatcher
+import YUI.modules.sql.language_sql as sql
+from YUI.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from YUI.langs import get_string, get_languages, get_language
 
 
 
