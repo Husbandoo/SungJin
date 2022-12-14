@@ -1,16 +1,16 @@
 import speedtest
-from TOGA import DEV_USERS, dispatcher
-from TOGA.modules.helper_funcs.chat_status import dev_plus
+from YUI import DEV_USERS, dispatcher
+from YUI.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext
-from TOGA.modules.helper_funcs.decorators import TOGAcmd, TOGAcallback
+from YUI.modules.helper_funcs.decorators import YUIcmd, YUIcallback
 
 
 def convert(speed):
     return round(int(speed) / 1048576, 2)
 
 
-@TOGAcmd(command='speedtest')
+@YUIcmd(command='speedtest')
 @dev_plus
 def speedtestxyz(update: Update, context: CallbackContext):
     buttons = [
@@ -24,7 +24,7 @@ def speedtestxyz(update: Update, context: CallbackContext):
     )
 
 
-@TOGAcallback(pattern="speedtest_.*")
+@YUIcallback(pattern="speedtest_.*")
 def speedtestxyz_callback(update: Update, context: CallbackContext):
     query = update.callback_query
 
