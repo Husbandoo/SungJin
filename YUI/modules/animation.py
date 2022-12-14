@@ -4,9 +4,9 @@ from typing import List
 from telegram import Update
 from telegram.ext import run_async, CallbackContext
 
-from TOGA import dispatcher
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.chat_status import user_admin
+from YUI import dispatcher
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.chat_status import user_admin
 
 EDIT_SLEEP = 1
 
