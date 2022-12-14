@@ -4,14 +4,14 @@ import nekos
 import requests
 from PIL import Image
 from telegram import ParseMode
-from TOGA import dispatcher, updater
-import TOGA.modules.sql.nsfw_sql as sql
-from TOGA.modules.log_channel import gloggable
+from YUI import dispatcher, updater
+import YUI.modules.sql.nsfw_sql as sql
+from YUI.modules.log_channel import gloggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CommandHandler, run_async, CallbackContext
-from TOGA.modules.helper_funcs.filters import CustomFilters
-from TOGA.modules.helper_funcs.chat_status import user_admin
+from YUI.modules.helper_funcs.filters import CustomFilters
+from YUI.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
 @run_async
