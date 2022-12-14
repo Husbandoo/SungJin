@@ -14,10 +14,10 @@ from telegram.utils.helpers import mention_html
 from typing import Optional, List
 from telegram import TelegramError
 
-import TOGA.modules.sql.users_sql as sql
-from TOGA.modules.disable import DisableAbleCommandHandler
-from TOGA.modules.helper_funcs.filters import CustomFilters
-from TOGA import (
+import YUI.modules.sql.users_sql as sql
+from YUI.modules.disable import DisableAbleCommandHandler
+from YUI.modules.helper_funcs.filters import CustomFilters
+from YUI import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -27,7 +27,7 @@ from TOGA import (
     WOLVES,
     dispatcher,
 )
-from TOGA.modules.helper_funcs.chat_status import (
+from YUI.modules.helper_funcs.chat_status import (
     user_admin_no_reply,
     bot_admin,
     can_restrict,
@@ -40,9 +40,9 @@ from TOGA.modules.helper_funcs.chat_status import (
     can_delete,
     dev_plus,
 )
-from TOGA.modules.helper_funcs.extraction import extract_user_and_text
-from TOGA.modules.helper_funcs.string_handling import extract_time
-from TOGA.modules.log_channel import gloggable, loggable
+from YUI.modules.helper_funcs.extraction import extract_user_and_text
+from YUI.modules.helper_funcs.string_handling import extract_time
+from YUI.modules.log_channel import gloggable, loggable
 
 
 
