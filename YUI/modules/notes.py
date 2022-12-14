@@ -2,13 +2,13 @@ import re, ast, random
 from io import BytesIO
 from typing import Optional
 
-import TOGA.modules.sql.notes_sql as sql
-from TOGA import LOGGER, dispatcher, DRAGONS
-from TOGA.modules.helper_funcs.chat_status import connection_status
-from TOGA.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from TOGA.modules.helper_funcs.msg_types import get_note_type
-from TOGA.modules.helper_funcs.handlers import MessageHandlerChecker
-from TOGA.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
+import YUI.modules.sql.notes_sql as sql
+from YUI import LOGGER, dispatcher, DRAGONS
+from YUI.modules.helper_funcs.chat_status import connection_status
+from YUI.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from YUI.modules.helper_funcs.msg_types import get_note_type
+from YUI.modules.helper_funcs.handlers import MessageHandlerChecker
+from YUI.modules.helper_funcs.string_handling import escape_invalid_curly_brackets
 from telegram import (
     MAX_MESSAGE_LENGTH,
     InlineKeyboardMarkup,
@@ -24,7 +24,7 @@ from telegram.ext import (
     Filters,
 )
 
-from TOGA.modules.helper_funcs.decorators import TOGAcmd, TOGAmsg, TOGAcallback
+from YUI.modules.helper_funcs.decorators import TOGAcmd, TOGAmsg, TOGAcallback
 
 from ..modules.helper_funcs.anonymous import user_admin, AdminPerms
 
