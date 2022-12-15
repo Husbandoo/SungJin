@@ -9,8 +9,8 @@ from functools import partial
 from pyrogram import Client , filters
 from pyrogram.types import Message
 import YUI.modules.sql.welcome_sql as sql
-from YUI import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS, BOT_USERNAME,
-                          WOLVES, sw, dispatcher, EVENT_LOGS, JOIN_LOGGER, pgram)
+from YUI import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
+                          WOLVES, dispatcher, EVENT_LOGS, JOIN_LOGGER, pgram)
 from YUI.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
