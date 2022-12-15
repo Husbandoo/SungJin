@@ -137,11 +137,8 @@ For all command use / or !
 """
 
 YUI_IMG = (
-      "https://telegra.ph/file/8d33aff8b23dab6a66500.jpg",
-      "https://telegra.ph/file/eb4122f3b770ac5653cd0.jpg",
-      "https://telegra.ph/file/66efdc49180a44dbe2d07.jpg",
-      "https://telegra.ph/file/8afdc68c747a5d51105b1.jpg",
-      "https://telegra.ph/file/622475986ba3d03ef0073.jpg",
+      "https://telegra.ph/file/4d4f30e6ccfee22b58a91.jpg",
+      "https://telegra.ph/file/d18946dad843e9660f4de.jpg",
 )
 
 TEXXT = "Yᴇs I'ᴍ Aʟɪᴠᴇ Aɴᴅ Wᴏʀᴋɪɴɢ Fɪɴᴇ.\nCʜᴇᴄᴋ Oᴜᴛ Tʜᴇ Bᴜᴛᴛᴏɴs Mᴇɴᴛɪᴏɴᴇᴅ Bᴇʟᴏᴡ.",
