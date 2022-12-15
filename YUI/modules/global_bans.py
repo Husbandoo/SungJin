@@ -27,7 +27,6 @@ from YUI import (
     DEMONS,
     TIGERS,
     WOLVES,
-    sw,
     dispatcher,
 )
 from YUI.modules.helper_funcs.chat_status import (
