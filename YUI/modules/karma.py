@@ -3,7 +3,7 @@ from pyrogram import filters
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 
-from YUI import pbot as app, BOT_ID
+from YUI import pbot as app
 from YUI.utils.errors import capture_err
 from YUI.utils.permissions import adminsOnly
 from Zoro.kurumi import (
@@ -18,6 +18,8 @@ from Zoro.kurumi import (
 )      
 from YUI.utils.filter_groups import karma_negative_group, karma_positive_group
 from YUI import arq
+
+BOT_ID = 5885016551
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|pro|cool|good|👍)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|noob|weak)$"
