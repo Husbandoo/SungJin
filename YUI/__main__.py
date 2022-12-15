@@ -527,7 +527,7 @@ def get_help(update: Update, context: CallbackContext):
             module = args[1].lower()
             first_name = update.effective_user.full_name
             update.effective_message.reply_photo(
-            random.choice(Asuka_N_IMG), caption= f"Hey {first_name}, Click the Button Below to get help of {module.capitalize()}",
+            random.choice(YUI_N_IMG), caption= f"Hey {first_name}, Click the Button Below to get help of {module.capitalize()}",
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
@@ -778,7 +778,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             name = dispatcher.bot.first_name
-            m = dispatcher.bot.send_video(f"@{SUPPORT_CHAT}", Asuka_DISPACHER_PIC, caption=f"*{name} Started!*", parse_mode=ParseMode.MARKDOWN,
+            m = dispatcher.bot.send_video(f"@{SUPPORT_CHAT}", YUI_DISPACHER_PIC, caption=f"*{name} Started!*", parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
