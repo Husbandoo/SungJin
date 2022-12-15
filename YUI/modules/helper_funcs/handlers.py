@@ -1,6 +1,6 @@
 
 import YUI.modules.sql.blacklistusers_sql as sql
-from YUI.config import ALLOW_EXCL
+from YUI import ALLOW_EXCL
 from YUI import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
 
 from telegram import Update
