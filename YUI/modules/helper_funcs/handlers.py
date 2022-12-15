@@ -1,6 +1,32 @@
-import YUI.modules.sql.blacklistusers_sql as sql
-from YUI import ALLOW_EXCL
-from YUI import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
+"""
+STATUS: Code is working. ✅
+"""
+
+"""
+GNU General Public License v3.0
+
+Copyright (C) 2022, SOME-1HING [https://github.com/SOME-1HING]
+
+Credits:-
+    I don't know who originally wrote this code. If you originally wrote this code, please reach out to me. 
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
+import Shikimori.modules.sql.blacklistusers_sql as sql
+from Shikimori.vars import ALLOW_EXCL
+from Shikimori import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
 
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, RegexHandler, Filters
@@ -13,9 +39,9 @@ from pyrate_limiter import (
 )
 
 if ALLOW_EXCL:
-    CMD_STARTERS = ("/", "?", "!", )
+    CMD_STARTERS = ("/", "!", ".", "~")
 else:
-    CMD_STARTERS = ("/", "?", "!")
+    CMD_STARTERS = ("/", "!", ".", "~",)
 
 
 class AntiSpam:
@@ -76,9 +102,8 @@ class CustomCommandHandler(CommandHandler):
             except:
                 user_id = None
 
-            if user_id:
-                if sql.is_user_blacklisted(user_id):
-                    return False
+            if user_id and sql.is_user_blacklisted(user_id):
+                return False
 
             if message.text and len(message.text) > 1:
                 fst_word = message.text.split(None, 1)[0]
@@ -101,16 +126,14 @@ class CustomCommandHandler(CommandHandler):
                     filter_result = self.filters(update)
                     if filter_result:
                         return args, filter_result
-                    else:
-                        return False
+                    return False
 
     def handle_update(self, update, dispatcher, check_result, context=None):
         if context:
             self.collect_additional_context(context, update, dispatcher, check_result)
             return self.callback(update, context)
-        else:
-            optional_args = self.collect_optional_args(dispatcher, update, check_result)
-            return self.callback(dispatcher.bot, update, **optional_args)
+        optional_args = self.collect_optional_args(dispatcher, update, check_result)
+        return self.callback(dispatcher.bot, update, **optional_args)
 
     def collect_additional_context(self, context, update, dispatcher, check_result):
         if isinstance(check_result, bool):
