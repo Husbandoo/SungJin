@@ -11,7 +11,7 @@ from telegram.ext import Filters, MessageHandler, run_async
 from YUI import dispatcher
 from YUI.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 from YUI.modules.redis.afk_redis import start_afk, end_afk, is_user_afk, afk_reason
-from YUI import REDIS_URL as REDIS
+from YUI import REDIS
 from YUI.modules.users import get_user_id
 
 from YUI.modules.helper_funcs.alternate import send_message
