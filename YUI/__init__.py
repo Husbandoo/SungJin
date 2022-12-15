@@ -1,30 +1,8 @@
-"""
-STATUS: Code is working. ✅
-"""
-
-"""
-GNU General Public License v3.0
-
-Copyright (C) 2022, SOME-1HING [https://github.com/SOME-1HING]
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""
 
 import logging
 import sys
 import time
-from Shikimori.vars import OWNER_ID, DEV_USERS, DEMONS, DRAGONS, TOKEN, WORKERS, API_HASH, API_ID, WOLVES, ARQ_API_KEY, TIGERS
+from YUI.config import OWNER_ID, DEV_USERS, DEMONS, DRAGONS, TOKEN, WORKERS, API_HASH, API_ID, WOLVES, ARQ_API_KEY, TIGERS
 from pyrogram import Client, filters
 from aiohttp import ClientSession
 import telegram.ext as tg
@@ -35,7 +13,7 @@ from telethon.sessions import MemorySession
 StartTime = time.time()
 
 # enable logging
-FORMAT = "[Shikimori] %(message)s"
+FORMAT = "[YUI] %(message)s"
 logging.basicConfig(
     handlers=[logging.FileHandler("bot_logs.txt"), logging.StreamHandler()],
     level=logging.INFO,
@@ -46,8 +24,8 @@ logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
 
 LOGGER = logging.getLogger('[Shikimori]')
-LOGGER.info("Shikimori is starting. | Built by SOME1HING. | Licensed under GPLv3.")
-LOGGER.info("Handled by: github.com/SOME-1HING (t.me/SOME1HING)")
+LOGGER.info("YUI is starting. | Built by Rishav. | Licensed under GPLv3.")
+LOGGER.info("Handled by: github.com/Princesssgirlxd (t.me/dragoneyegaming)")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
@@ -69,7 +47,8 @@ print("[INFO]: ARQ CLIENT INITIALIZED")
 
 # Pyrogram CLient
 print("[INFO]: INITIALIZING PYROGRAM CLIENT")
-pbot = Client("ShikimoriPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pgram = Client("YUI", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("YUI", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 print("[INFO]: PYROGRAM CLIENT INITIALIZED")
 
 # PTB Client
@@ -95,7 +74,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from Shikimori.modules.helper_funcs.handlers import (
+from YUI.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
