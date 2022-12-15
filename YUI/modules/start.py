@@ -13,6 +13,6 @@ PM_START_TEXT = """
 *Hɪᴛ Tʜᴇ /help Tᴏ Gᴇᴛ Lɪsᴛ Oғ Mʏ Cᴏᴍᴍᴀɴᴅs.××*
 """
 
-@pgram.on_message(filters.command("start") filters.private)
+@pgram.on_message(filters.command("start") && filters.private)
 async def start(_, message):
    await message.reply_video(START_VID , PM_START_TEXT)
