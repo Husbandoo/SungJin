@@ -231,7 +231,7 @@ print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("YUI", API_ID, API_HASH)
-pbot = Client(YuigaRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("YuigaRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 mongo_client = MongoClient(MONGO_DB_URI)
 dispatcher = updater.dispatcher
 
@@ -274,7 +274,7 @@ try:
 
     REDIS.ping()
 
-    LOGGER.info("[TOGA]:Connecting To Redis Database")
+    LOGGER.info("[Yui]:Connecting To Redis Database")
 
 except BaseException:
 
