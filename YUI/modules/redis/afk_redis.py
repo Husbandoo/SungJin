@@ -1,6 +1,6 @@
 
 
-from YUI import REDIS
+from YUI import REDIS_URL as REDIS
 
 
 # AFK
