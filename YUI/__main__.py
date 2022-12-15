@@ -11,17 +11,17 @@ from typing import List
 from typing import Optional
 from pyrogram import Client, idle, filters
 
-import AsukaRobot.modules.sql.users_sql as sql
-from AsukaRobot.modules.sudoers import bot_sys_stats as bss
+import YUI.modules.sql.users_sql as sql
+from YUI.modules.sudoers import bot_sys_stats as bss
 
-from AsukaRobot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
+from YUI import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
                           OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
                           SUPPORT_CHAT, dispatcher, StartTime, telethn, updater, pgram, pbot)
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from AsukaRobot.modules import ALL_MODULES
-from AsukaRobot.modules.helper_funcs.chat_status import is_user_admin
-from AsukaRobot.modules.helper_funcs.misc import paginate_modules
+from YUI.modules import ALL_MODULES
+from YUI.modules.helper_funcs.chat_status import is_user_admin
+from YUI.modules.helper_funcs.misc import paginate_modules
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update)
 from telegram.error import (BadRequest, ChatMigrated, NetworkError,
@@ -59,15 +59,16 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+LMAO = "DragonEyeGaming"
+
 PM_START_TEXT = """
 *Kᴏɴɪᴄʜɪᴡᴀ {},*
-*I'ᴍ Kᴀᴍɪsᴀᴛᴏ Aʏᴀᴋᴀ, A Gᴀᴍᴇ Tʜᴇᴍᴇᴅ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
+*I'ᴍ Yᴜɪɢᴀʜᴀᴍᴀ Yᴜɪ, A Aɴɪᴍᴇ Tʜᴇᴍᴇᴅ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-❍ *Uᴘᴛɪᴍᴇ:* `{}`
-❍ *Pʏᴛʜᴏɴ Vᴇʀsɪᴏɴ:* `{}`
+❍ *Uᴘᴛɪᴍᴇ:* {}
+❍ *Oᴡɴᴇʀ:* {LMAO}
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 *Hɪᴛ Tʜᴇ /help Tᴏ Gᴇᴛ Lɪsᴛ Oғ Mʏ Cᴏᴍᴍᴀɴᴅs.××*
-
 
 
 
@@ -78,21 +79,21 @@ PM_START_TEXT = """
 buttons = [
     [
                         InlineKeyboardButton(
-                             text="➕️ Aᴅᴅ Aʏᴀᴋᴀ Tᴏ Yᴏᴜʀ Cʜᴀᴛ ➕️",
-                             url="https://t.me/AyakaXRobot?startgroup=true"),
+                             text="➕️ Aᴅᴅ Yᴜɪ Tᴏ Yᴏᴜʀ Cʜᴀᴛ ➕️",
+                             url="https://t.me/YuigaRobot?startgroup=true"),
                     ],
                    [
                        InlineKeyboardButton(
                              text="Sᴜᴘᴘᴏʀᴛ",
-                             url="https://t.me/Mysticbots_support"),
+                             url="https://t.me/Yuigasupport"),
                        InlineKeyboardButton(
                              text="Uᴘᴅᴀᴛᴇs",
-                             url="https://t.me/AyakaUpdates"),
+                             url="https://t.me/x"),
                    ],
                   [
                         InlineKeyboardButton(
-                             text="Mʏsᴛɪᴄ Nᴇᴛᴡᴏʀᴋ",
-                             url="https://t.me/MysticXNetwork"),
+                             text="Network",
+                             url="https://t.me/x"),
                     ],
     ]
 
@@ -101,18 +102,18 @@ ABOUT1 = """
 """
 
 ABOUT2 = """
-*‣ Asuka Support Chats*\nJoin My Support Group/Channel For Reporting Problems And Updates On @AsukaRobot.
+*‣ Yui Support Chats*\nJoin My Support Group/Channel For Reporting Problems And Updates On @YuigaRobot.
 """
 
 REPO_TXT = """
 *‣ Owner:*
-• [Xelcius](t.me/xelcius)
+• [ZoRo](t.me/dragoneyegaming)
 \n*‣ Note:*
 • If You Want This Bot's Repo You Can Get It From The Button Below.
-• Report Any Kind Of Bugs At [Support](t.me/AsukaSupport)
+• Report Any Kind Of Bugs At [Support](t.me/dragoneyegaming)
 """
 
-ABOUT3 = """Hello [{}], My name is *Kamisato Ayaka*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+ABOUT3 = """Hello [{}], My name is *💕Yuigahama Yui💕*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
             \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
@@ -123,7 +124,7 @@ ABOUT3 = """Hello [{}], My name is *Kamisato Ayaka*. A Powerful Telegram Group M
             \n\n*If you have any Question, You can join Support Chat. My Developer Team will Answer. Check Support Button Below*"""
 
 HELP_STRINGS = """
-Hey [{}] *Ayaka* here!
+Hey [{}] *Yui* here!
 I Help Admins To Manage Their Groups!
 Main commands available :
  ‣ /help: PM's you this message.
@@ -135,18 +136,7 @@ Main commands available :
 For all command use / or !
 """
 
-ACRUISE = """
-💫 𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 @Anime_Cruise !!!
-
-• 𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐀𝐥𝐥 𝐋𝐚𝐭𝐞𝐬𝐭 𝐀𝐧𝐢𝐦𝐞𝐬.
-• 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐀𝐧𝐢𝐦𝐞, 𝐋𝐨𝐰 𝐒𝐢𝐳𝐞.
-• 𝐅𝐚𝐬𝐭𝐞𝐬𝐭 𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐎𝐟 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐀𝐧𝐢𝐦𝐞𝐬
-• 24/7 𝐀𝐧𝐢𝐦𝐞 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐬 𝐀𝐜𝐜𝐞𝐩𝐭𝐞𝐝.
-
-✨ 𝐖𝐞 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐘𝐨𝐮𝐫 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 & 𝐘𝐨𝐮 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐧𝐢𝐦𝐞𝐬.🤍✨
-"""
-
-Asuka_IMG = (
+YUI_IMG = (
       "https://telegra.ph/file/8d33aff8b23dab6a66500.jpg",
       "https://telegra.ph/file/eb4122f3b770ac5653cd0.jpg",
       "https://telegra.ph/file/66efdc49180a44dbe2d07.jpg",
@@ -156,24 +146,17 @@ Asuka_IMG = (
 
 TEXXT = "Yᴇs I'ᴍ Aʟɪᴠᴇ Aɴᴅ Wᴏʀᴋɪɴɢ Fɪɴᴇ.\nCʜᴇᴄᴋ Oᴜᴛ Tʜᴇ Bᴜᴛᴛᴏɴs Mᴇɴᴛɪᴏɴᴇᴅ Bᴇʟᴏᴡ.",
 
-Asuka_N_IMG = (
-      "https://telegra.ph/file/8d33aff8b23dab6a66500.jpg",
-      "https://telegra.ph/file/eb4122f3b770ac5653cd0.jpg",
-      "https://telegra.ph/file/66efdc49180a44dbe2d07.jpg",
-      "https://telegra.ph/file/8afdc68c747a5d51105b1.jpg",
-      "https://telegra.ph/file/622475986ba3d03ef0073.jpg"
+YUI_N_IMG ="https://telegra.ph/file/9a8853ea4a5718e9427c3.jpg"
 
-)
+YUI_PIC = "https://telegra.ph/file/9a8853ea4a5718e9427c3.jpg"
 
-Asuka_PIC = "https://telegra.ph/file/622475986ba3d03ef0073.jpg"
+YUI_VID = "https://telegra.ph/file/2ddc15125fe6d1cd1b6fc.mp4"
 
-Asuka_VID = "https://telegra.ph/file/f1e36934d02cded4a1776.mp4"
+PM_PHOTO = "https://telegra.ph/file/2f7fe4e71e96632e48905.mp4"
 
-PM_PHOTO = "https://telegra.ph/file/3e9df01f0593046fec525.mp4"
+YUI_DISPACHER_PIC = "https://telegra.ph/file/2eab97790906edc180d55.jpg"
 
-Asuka_DISPACHER_PIC = "https://telegra.ph/file/f1e36934d02cded4a1776.mp4"
-
-DONATE_STRING = """ Adding Me To Your Groups Is Donation For Me Though I Would Appreciate If You Join My Creator's Network @TheKaizuryu"""
+DONATE_STRING = """ Adding Me To Your Groups Is Donation For Me Though I Would Appreciate If You Join My Creators Network @dragonsXnetwork"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -311,7 +294,7 @@ def start(update: Update, context: CallbackContext):
         first = update.effective_user.full_name
         chat = update.effective_chat.title
         update.effective_message.reply_video(
-                video="https://te.legra.ph/file/9a87ede0595f7f9152b29.mp4",
+                video="https://telegra.ph/file/2f7fe4e71e96632e48905.mp4",
                 caption="Yᴇs I'ᴍ Aʟɪᴠᴇ Aɴᴅ Wᴏʀᴋɪɴɢ Fɪɴᴇ. \nCʜᴇᴄᴋ Oᴜᴛ Tʜᴇ Bᴜᴛᴛᴏɴs Mᴇɴᴛɪᴏɴᴇᴅ Bᴇʟᴏᴡ.",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
@@ -319,10 +302,10 @@ def start(update: Update, context: CallbackContext):
                   [
                        InlineKeyboardButton(
                              text="Sᴜᴘᴘᴏʀᴛ",
-                             url="https://t.me/Akatsukibots_support"),
+                             url="https://t.me/Yuigasupport"),
                        InlineKeyboardButton(
                              text="Uᴘᴅᴀᴛᴇs",
-                             url="https://t.me/AyakaUpdates")
+                             url="https://t.me/x")
                      ]
                 ]
             ),
@@ -389,7 +372,7 @@ def help_button(update, context):
             help_buttons.append(
                 [
                     InlineKeyboardButton(text="Back", callback_data="help_back"),
-                    InlineKeyboardButton(text='Support', url='https://t.me/AsukaSupport')
+                    InlineKeyboardButton(text='Support', url='https://t.me/YuiGaSUPpoRt')
                 ]
                     )
             query.message.edit_caption(
@@ -441,7 +424,7 @@ def about_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="asuka_")
+                    InlineKeyboardButton(text="Back", callback_data="yui_")
                  ],
                 ]
             ),
@@ -455,11 +438,11 @@ def about_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/AsukaSupport"),
-                    InlineKeyboardButton(text="Updates", url="t.me/AsukaUpdates"),
+                    InlineKeyboardButton(text="Support", url="t.me/Yuigasupport"),
+                    InlineKeyboardButton(text="Updates", url="t.me/X"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="asuka_")
+                    InlineKeyboardButton(text="Back", callback_data="yui_")
                  ],
                 ]
             ),
@@ -477,11 +460,11 @@ def repo_callback_data(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Source Code", url="https://github.com/RimuruDemonlord/AsukaRobot"),
-                    InlineKeyboardButton(text="Kaizuryu", url="t.me/TheKaizuryu"),
+                    InlineKeyboardButton(text="Source Code", url="t.me/Dragoneyegaming"),
+                    InlineKeyboardButton(text="Owner", url="t.me/dragoneyegaming"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="asuka_")
+                    InlineKeyboardButton(text="Back", callback_data="yui_")
                  ],
                 ]
             ),
@@ -494,11 +477,11 @@ def repo_callback_data(update, context):
         )
 
 @run_async
-def asuka_callback_data(update, context):
+def yui_callback_data(update, context):
     query = update.callback_query
     bot = context.bot
     uptime = get_readable_time((time.time() - StartTime))
-    if query.data == "asuka_":
+    if query.data == "yui_":
         query.message.edit_caption(
             ABOUT3.format(update.effective_user.first_name, update.effective_user.id, escape_markdown(context.bot.first_name)),
             parse_mode=ParseMode.MARKDOWN,
@@ -506,19 +489,19 @@ def asuka_callback_data(update, context):
                 [
                  [
                     InlineKeyboardButton(text="Try Inline", switch_inline_query_current_chat=""),
-                    InlineKeyboardButton(text="Developer", url="t.me/Xelcius"),
+                    InlineKeyboardButton(text="Developer", url="t.me/dragoneyegaming"),
                  ],
                  [
                     InlineKeyboardButton(text="Support", callback_data="about_back"),
-                    InlineKeyboardButton(text="Source Code", url="https://github.com/RimuruDemonlord/AsukaRobot"),
+                    InlineKeyboardButton(text="Source Code", url="t.me/dragoneyegaming"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="asuka_back")
+                    InlineKeyboardButton(text="Back", callback_data="yui_back")
                  ],
                 ]
             ),
         )
-    elif query.data == "asuka_back":
+    elif query.data == "yui_back":
         first_name = update.effective_user.full_name
         id = update.effective_user.id
         query.message.edit_caption(
@@ -557,12 +540,12 @@ def get_help(update: Update, context: CallbackContext):
         first_name = update.effective_user.full_name
         first_nam = update.effective_user.id
         update.effective_message.reply_photo(
-            random.choice(Asuka_N_IMG), caption= "Hey [{}](tg://user?id={}) Click the Button Below to get the list of possible commands.".format(first_name, first_nam),
+            random.choice(YUI_N_IMG), caption= "Hey [{}](tg://user?id={}) Click the Button Below to get the list of possible commands.".format(first_name, first_nam),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text=" Click here", url="https://t.me/AsukaRobot?start=help")
+                  InlineKeyboardButton(text=" Click here", url="https://t.me/YUIGAROBOT?start=help")
                   ]
                 ]
             ),
@@ -719,7 +702,7 @@ def get_settings(update: Update, context: CallbackContext):
         if is_user_admin(chat, user.id):
             text = "Click here to get this chat's settings, as well as yours."
             msg.reply_photo(
-                random.choice(Asuka_N_IMG), caption=text,
+                random.choice(YUI_N_IMG), caption=text,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
                         text="Settings",
@@ -750,7 +733,7 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 5132611794 and DONATION_LINK:
+        if OWNER_ID != 1936119750 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -801,14 +784,14 @@ def main():
                   [
                        InlineKeyboardButton(
                              text="[Add Me]",
-                             url="https://t.me/AyakaXRobot?startgroup=true")
+                             url="https://t.me/YuigaRobot?startgroup=true")
                      ]
                 ]
             ),
         )
         except Unauthorized:
             LOGGER.warning(
-                "Asuka can't able to send message to support_chat, go and check!")
+                "Yui can't able to send message to support_chat, go and check!")
         except BadRequest as e:
             LOGGER.warning(e.message)
 
@@ -823,8 +806,8 @@ def main():
     settings_callback_handler = CallbackQueryHandler(
         settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(asuka_callback_data, pattern=r"asuka_")
-    asuka_callback_handler = CallbackQueryHandler(about_callback_data, pattern=r"about_")
+    about_callback_handler = CallbackQueryHandler(yui_callback_data, pattern=r"yui_")
+    yui_callback_handler = CallbackQueryHandler(about_callback_data, pattern=r"about_")
     repo_callback_handler = CallbackQueryHandler(repo_callback_data, pattern=r"repo_")
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate,
@@ -837,7 +820,7 @@ def main():
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(repo_callback_handler)
-    dispatcher.add_handler(asuka_callback_handler)
+    dispatcher.add_handler(yui_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
@@ -855,7 +838,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Finally Asuka Is Online")
+        LOGGER.info("Finally Yui Is Online")
         allowed_updates = ['message', 'edited_message', 'callback_query', 'callback_query', 'my_chat_member',
                            'chat_member', 'chat_join_request', 'channel_post', 'edited_channel_post', 'inline_query']
         updater.start_polling(
