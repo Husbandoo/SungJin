@@ -1,6 +1,6 @@
 
 
-from YUI.config import REDIS
+from redis import REDIS
 
 
 # AFK
