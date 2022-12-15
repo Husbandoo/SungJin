@@ -22,7 +22,7 @@ class Config(object):
     NO_LOAD="translation"
     MONGO_DB="mongodb+srv://yuiga:serena12@cluster0.awwhgt0.mongodb.net/?retryWrites=true&w=majority"
     WEBHOOK=False
-    BOT_API_URL="5614075230:AAHwMlH22eJH8BgVDyHTI0bPWODMRu727pI"
+    BOT_API_URL="5885016551:AAGr6TVgVcd84MooEZgaeFxy5-qFkuMQagk"
     #kacrmdi
     WOLVES=[]
     BOT_ID="5885016551" 
