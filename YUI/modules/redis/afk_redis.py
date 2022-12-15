@@ -1,6 +1,6 @@
 
 
-from YUI import REDIS
+import REDIS
 
 
 # AFK
