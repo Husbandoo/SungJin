@@ -1,6 +1,6 @@
-"""
 
-from redis import REDIS
+
+from YUI import REDIS
 
 
 # AFK
@@ -25,4 +25,4 @@ def end_afk(userid):
 # Helpers
 def strb(redis_string):
     return str(redis_string)
-"""
+
