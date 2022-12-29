@@ -2,17 +2,24 @@ import asyncio
 import logging
 import os
 import sys
+import json
 import time
 import spamwatch
-import aiohttp
 import telegram.ext as tg
-from telethon.sessions import StringSession
-from telethon import TelegramClient
+from inspect import getfullargspec
 from aiohttp import ClientSession
+from Python_ARQ import ARQ
+from telethon import TelegramClient
+from telethon.sessions import StringSession
+from telethon.sessions import MemorySession
+from pyrogram.types import Message
+from pyrogram import Client, errors
+from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInvalid
+from pyrogram.types import Chat, User
+from ptbcontrib.postgres_persistence import PostgresPersistence
+from telethon import TelegramClient
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from redis import StrictRedis
-from Python_ARQ import ARQ
-from pyrogram import Client, errors
 from YUI.services.quoteapi import Quotly
 
 StartTime = time.time()
