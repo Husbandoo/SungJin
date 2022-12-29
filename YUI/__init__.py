@@ -268,7 +268,8 @@ pgram = Client(
     workers=min(32, os.cpu_count() + 4),
 )
 apps = []
-apps.append(pbot , pgram)
+apps.append(pbot)
+apps.append(pgram)
 loop = asyncio.get_event_loop()
 
 async def get_entity(client, entity):
