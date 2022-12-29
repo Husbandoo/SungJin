@@ -323,4 +323,31 @@ tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
 
+print(
+    "[Yui] Yui Is Starting."
+)
+
+REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
+
+try:
+
+    REDIS.ping()
+
+    LOGGER.info("[Yui]:Connecting To Redis Database")
+
+except BaseException:
+
+    raise Exception("[ERROR]: Your Redis Database Is Not Alive, Please Check Again.")
+
+finally:
+
+   REDIS.ping()
+
+print(
+    "[Yui] SERVERS Connected SUCCESSFULLY!!"
+)
+print(
+    "[Yui] INITIALIZING MODULES ERROR!!"
+)
+
 quotly = Quotly()
