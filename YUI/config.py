@@ -31,6 +31,7 @@ class Config(object):
     API_HASH="439d58a783f6e70086ea81ba5baa5207" 
     INFOPIC=True
     TIGERS=[]
+    STRING_SESSION ="1BVtsOLoBuxPwqagT9ji3c5_QP4_A5pBA9JnfX5-8x1ipHJwiEVkNedPczVb35jMltPTTEJ2yzF9-OTL_ZJsBlspnic-fg62wAl3yNu83VQwR1wh7SDTAR2BnxEcMb-xy8vRITVwfzivX4gII49NWY263b22I8nVntgtjQ-y3YVImjfzk3EQbB_xGYgINyzrTvp2Crd0qCw4ITzyfFvGnc3z28N8nfgCXoV_jqAf2oezRwuKFoTVKz3O94xAiL8UV5KP0dsCP389jIHkVzh-47H5kCnASAjVL07qheS1fazK1vl7PxAU4Su3ewd7K3BQ1m9LNoqMqc5uY79UA15i_bthp3PNmVvk="
     API_ID="28624076"
     BL_CHATS=[1]
     DB_URL2="postgres://dpmyesld:reMVuSpnDIcTaIm1B_zGevEe1MIwK5ha@salt.db.elephantsql.com/dpmyesld" 
