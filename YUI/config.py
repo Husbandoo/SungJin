@@ -25,14 +25,14 @@ class Config(object):
     BOT_API_URL="5885016551:AAGr6TVgVcd84MooEZgaeFxy5-qFkuMQagk"
     #kacrmdi
     WOLVES=[]
-    BOT_ID="5885016551" 
+    BOT_ID=5885016551
     SQLALCHEMY_DATABASE_URI="postgres://jympgnps:2_sz2vN3Zz8z5thAssDB9BRhQt8BZRKT@jelani.db.elephantsql.com/jympgnps" 
-    JOIN_LOGGER="-1001692375111" 
+    JOIN_LOGGER=-1001692375111
     API_HASH="439d58a783f6e70086ea81ba5baa5207" 
     INFOPIC=True
     TIGERS=[]
     STRING_SESSION ="1BVtsOLoBuxPwqagT9ji3c5_QP4_A5pBA9JnfX5-8x1ipHJwiEVkNedPczVb35jMltPTTEJ2yzF9-OTL_ZJsBlspnic-fg62wAl3yNu83VQwR1wh7SDTAR2BnxEcMb-xy8vRITVwfzivX4gII49NWY263b22I8nVntgtjQ-y3YVImjfzk3EQbB_xGYgINyzrTvp2Crd0qCw4ITzyfFvGnc3z28N8nfgCXoV_jqAf2oezRwuKFoTVKz3O94xAiL8UV5KP0dsCP389jIHkVzh-47H5kCnASAjVL07qheS1fazK1vl7PxAU4Su3ewd7K3BQ1m9LNoqMqc5uY79UA15i_bthp3PNmVvk="
-    API_ID="28624076"
+    API_ID=28624076
     BL_CHATS=[1]
     DB_URL2="postgres://dpmyesld:reMVuSpnDIcTaIm1B_zGevEe1MIwK5ha@salt.db.elephantsql.com/dpmyesld" 
     TOKEN="5885016551:AAGr6TVgVcd84MooEZgaeFxy5-qFkuMQagk"
@@ -44,10 +44,10 @@ class Config(object):
     SUPPORT_CHAT="Yuigasupport"
     OWNER_USERNAME="dragoneyegaming"
     DONATION_LINK="https://t.me/dragoneyegaming"
-    EVENT_LOGS="-1001692375111" 
-    OWNER_ID="1936119750" 
+    EVENT_LOGS=-1001692375111 
+    OWNER_ID=1936119750 
     TIME_API_KEY=""
-    ERROR_LOGS="-1001692375111" 
+    ERROR_LOGS=-1001692375111
     BOT_NAME="YuigaRobot"
     STRICT_GBAN=True
     REDIS_URL="redis://default:e06wyhyZUB0UFKbViNOzbsY5u7X2DoaY@redis-17063.c8.us-east-1-2.ec2.cloud.redislabs.com:17063"
@@ -59,7 +59,7 @@ class Config(object):
     AI_API_KEY=""
     SPAMWATCH_SUPPORT_CHAT="SpamWatchSupport"
     OPENWEATHERMAP_ID=""
-    LOG_GROUP_ID="-1001735328148"
+    LOG_GROUP_ID=-1001735328148
     STRICT_GMUTE=True
     SPAMWATCH_API=""
     OWNER_NAME="ZoRo"
