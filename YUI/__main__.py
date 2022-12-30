@@ -814,7 +814,7 @@ def main():
     settings_callback_handler = CallbackQueryHandler(
         settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(asuka_callback_data, pattern=r"yui_")
+    about_callback_handler = CallbackQueryHandler(yui_callback_data, pattern=r"yui_")
     yui_callback_handler = CallbackQueryHandler(about_callback_data, pattern=r"about_")
     repo_callback_handler = CallbackQueryHandler(repo_callback_data, pattern=r"repo_")
     donate_handler = CommandHandler("donate", donate)
