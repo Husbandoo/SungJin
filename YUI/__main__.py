@@ -30,7 +30,7 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           filters, MessageHandler)
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
-
+from telegram.ext.filters import BaseFilter
 
 def get_readable_time(seconds: int) -> str:
     count = 0
