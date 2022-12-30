@@ -123,6 +123,7 @@ if ENV:
     DEBUG = bool(os.environ.get("IS_DEBUG", False))
     REDIS_URL = os.environ.get("REDIS_URL", "")
     OWNER_NAME = os.environ.get("OWNER_NAME", "")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "")
     COTB = ""
 
     try:
@@ -208,7 +209,7 @@ else:
     ARQ_API_KEY = Config.ARQ_API_KEY
     COTB = Config.COTB
     INFOPIC = Config.INFOPIC
-    
+    STRING_SESSION = Config.STRING_SESSION
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
@@ -246,13 +247,13 @@ BOT_ID = dispatcher.bot.id
 BOT_USERNAME = dispatcher.bot.username
 BOT_NAME = dispatcher.bot.first_name
 
-"""ubot2 = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
+ubot2 = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 try:
     ubot2.start()
 except BaseException:
     print("Userbot Error! Have you added a STRING_SESSION in deploying??")
     sys.exit(1)
-"""
+
 pbot = Client(
     ":memory:",
     api_id=API_ID,
