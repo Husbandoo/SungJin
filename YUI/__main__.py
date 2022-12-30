@@ -241,63 +241,49 @@ def test(update: Update, context: CallbackContext):
 @run_async
 def start(update: Update, context: CallbackContext):
     args = context.args
-    chat = update.effective_chat
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
-                send_help(update.effective_chat.id, HELP_STRINGS.format(escape_markdown(update.effective_user.first_name), update.effective_user.id))
+                send_help(update.effective_chat.id, HELP_STRINGS)
             elif args[0].lower().startswith("ghelp_"):
                 mod = args[0].lower().split("_", 1)[1]
                 if not HELPABLE.get(mod, False):
                     return
-                xx = HELPABLE[mod].get_help(chat)
-                if isinstance(xx, list):
-                    txt = str(xx[0])
-                    kb = [xx[1], [InlineKeyboardButton(text="Back", callback_data="help_back")]]
-                else:
-                    txt = str(xx)
-                    kb = [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
                 send_help(
                     update.effective_chat.id,
-                    txt,
-                    InlineKeyboardMarkup(kb),
+                    HELPABLE[mod].__help__,
+                    InlineKeyboardMarkup(
+                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                    ),
                 )
-            elif args[0].lower() == "markdownhelp":
-                IMPORTED["extras"].markdown_help_sender(update)
-            elif args[0].lower() == "disasters":
-                IMPORTED["disasters"].send_disasters(update)
+
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
                 chat = dispatcher.bot.getChat(match.group(1))
 
                 if is_user_admin(chat, update.effective_user.id):
-                    send_settings(
-                        match.group(1), update.effective_user.id, False)
+                    send_settings(match.group(1), update.effective_user.id, False)
                 else:
-                    send_settings(
-                        match.group(1), update.effective_user.id, True)
+                    send_settings(match.group(1), update.effective_user.id, True)
 
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            first_name = update.effective_user.full_name
-            id = update.effective_user.id
-
-            update.effective_message.reply_video(
-                video=(PM_PHOTO),
-                caption=PM_START_TEXT.format(
+            first_name = update.effective_user.first_name
+            uptime = get_readable_time((time.time() - StartTime))
+            update.effective_message.reply_text(
+                PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(uptime),
-                    platform.python_version(),
                     sql.num_users(),
-                    sql.num_chats()),
+                    sql.num_chats()),                        
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
+                disable_web_page_preview=False,
             )
-
     else:
         first = update.effective_user.full_name
         chat = update.effective_chat.title
