@@ -10,7 +10,7 @@ import asyncio
 from typing import List
 from typing import Optional
 from pyrogram import Client, idle, filters
-
+from telethon.tl.types import PeerUser
 import YUI.modules.sql.users_sql as sql
 from YUI.modules.sudoers import bot_sys_stats as bss
 
