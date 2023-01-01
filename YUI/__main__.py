@@ -425,7 +425,7 @@ def yui_about_callback(update, context):
 
     elif query.data == "yui_admin":
         query.message.edit_text(
-            text=f"""*Hello [{}], My name is *Yuigahama Yui*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+            text="""*Hello [{}], My name is *Yuigahama Yui*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
             \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
@@ -474,7 +474,7 @@ def yui_about_callback(update, context):
 
     elif query.data == "yui_credit":
         query.message.edit_text(
-            text=f"Credits For 💕 Yuigahama Yui 💕" ,
+            text="Credits For 💕 Yuigahama Yui 💕" ,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
