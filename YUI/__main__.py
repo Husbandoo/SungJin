@@ -111,8 +111,8 @@ buttons = [
                    ],
                   [
                         InlineKeyboardButton(
-                             text="Mʏsᴛɪᴄ Nᴇᴛᴡᴏʀᴋ",
-                             url="https://t.me/x"),
+                             text="Reach My Owner",
+                             url="https://t.me/dragoneyegaming"),
                     ],
     ]
 
