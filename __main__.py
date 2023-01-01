@@ -82,44 +82,55 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-GROUP_START_IMG = "https://graph.org//file/b132c3bcde2bf678189e8.mp4" 
-    
+GROUP_START_IMG = "https://telegra.ph/file/2ddc15125fe6d1cd1b6fc.mp4" 
+LMAO_XD = "DragonEyeGaming"  
     
 PM_START_TEXT = """
-*Hello {} !*
-✪ I'm *Lionell Messi* a football-themed management bot [✨](https://graph.org//file/e17d325b324f88bfeef9c.jpg)
-────────────────────────
-× *Uptime:* `{}`
-× `{}` *users, across* `{}` *chats.*
-────────────────────────
-✪ Hit /help to see my available commands.
+*Kᴏɴɪᴄʜɪᴡᴀ {},*
+*I'ᴍ Yᴜɪɢᴀʜᴀᴍᴀ Yᴜɪ, A Aɴɪᴍᴇ Tʜᴇᴍᴇᴅ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+❍ *Uᴘᴛɪᴍᴇ:* {}
+❍ *Oᴡɴᴇʀ:* {LMAO_XD}
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+*Hɪᴛ Tʜᴇ /help Tᴏ Gᴇᴛ Lɪsᴛ Oғ Mʏ Cᴏᴍᴍᴀɴᴅs.××*
 """
 
 buttons = [
     [
-        InlineKeyboardButton(text=f"About {dispatcher.bot.first_name}", callback_data="messi_"),
-    ],
-    [
-        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
-        InlineKeyboardButton(
-            text="My Officials", url=f"t.me/Fifa_Federation"
-        ),
-    ],
-    [
-        InlineKeyboardButton(
-            text="+  Add Me To Your Group +", url=f"t.me/messi_probot?startgroup=new"),
-    ],
-]
+                        InlineKeyboardButton(
+                             text="➕️ Add Yui To Your Group ➕️",
+                             url="https://t.me/YuigaRobot?startgroup=true"),
+                    ],
+                   [
+                       InlineKeyboardButton(
+                             text="Sᴜᴘᴘᴏʀᴛ",
+                             url="https://t.me/Yuigasupport"),
+                       InlineKeyboardButton(
+                             text="Uᴘᴅᴀᴛᴇs",
+                             url="https://t.me/x"),
+                   ],
+                  [
+                        InlineKeyboardButton(
+                             text="Mʏsᴛɪᴄ Nᴇᴛᴡᴏʀᴋ",
+                             url="https://t.me/x"),
+                    ],
+    ]
 
 
 HELP_STRINGS = """
-Click on the button bellow to get description about specifics command."""
+Hey [{}] *Yui* here!
+I Help Admins To Manage Their Groups!
+Main commands available :
+ ‣ /help: PM's you this message.
+ ‣ /privacy: to view the privacy policy, and interact with your data.
+ ‣ /help <module name>: PM's you info about that module.
+ ‣ /settings:
+   • in PM: will send you your settings for all supported modules.
+   • in a group: will redirect you to pm, with all that chat's settings.
+For all command use / or !"""
 
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting the members of @messi_probot_team \
- Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+DONATE_STRING = """Adding Me To Your Groups Is Donation For Me."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -234,19 +245,22 @@ def start(update: Update, context: CallbackContext):
             )
                
     else:
-        update.effective_message.reply_animation(
-            GROUP_START_IMG,
-            caption="<code> Hey there I am with you Since</code>: <code>{}</code>".format(
-                uptime
-            ),
+        first = update.effective_user.full_name
+        chat = update.effective_chat.title
+        update.effective_message.reply_video(
+                video="https://telegra.ph/file/2ddc15125fe6d1cd1b6fc.mp4",
+                caption="Yᴇs I'ᴍ Aʟɪᴠᴇ Aɴᴅ Wᴏʀᴋɪɴɢ Fɪɴᴇ. \nCʜᴇᴄᴋ Oᴜᴛ Tʜᴇ Bᴜᴛᴛᴏɴs Mᴇɴᴛɪᴏɴᴇᴅ Bᴇʟᴏᴡ.",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [
-                        InlineKeyboardButton(
-                            text="U P D A T E S", url="https://t.me/Messi_Probot_Team"
-                        ),
-                    ],
+                  [
+                       InlineKeyboardButton(
+                             text="Sᴜᴘᴘᴏʀᴛ",
+                             url="https://t.me/Yuigasupport"),
+                       InlineKeyboardButton(
+                             text="Uᴘᴅᴀᴛᴇs",
+                             url="https://t.me/x")
+                     ]
                 ]
             ),
         )
@@ -374,33 +388,33 @@ def help_button(update, context):
         pass
 
 
-def messi_about_callback(update, context):
+def yui_about_callback(update, context):
     query = update.callback_query
-    if query.data == "messi_":
+    if query.data == "yui_":
         query.message.edit_text(
-            text=f"๏ I'm *Lionell Messi*, a powerful group management bot built to help you manage your group easily."
-            "\n• I can restrict users."
-            "\n• I can greet users with customizable welcome messages and even set a group's rules."
-            "\n• I have an advanced anti-flood system."
-            "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
-            "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
-            "\n• I check for admins' permissions before executing any command and more stuffs"
-            f"\n\n_{dispatcher.bot.first_name}'s licensed under the GNU General Public License v3.0_"
-            f"\n\n Click on button bellow to get basic help for {dispatcher.bot.first_name}.",
+            text=f"""Hello [{}], My name is 💕*Yuigahama Yui*💕. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+            \n ‣ I can Restrict Users.
+            \n ‣ I can Greet Users with customizable welcome message and even set a group rules
+            \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
+            \n ‣ I can Warn Users until they reach max Warns, with each predefined actions such as Ban, Mute and Kick etc.
+            \n ‣ I have Note Keeping System, Blacklists, And even Predetermined replies on certain keywords.
+            \n ‣ I check Admins Permissions before perform any Command and more Stuffs.
+            \n ‣ I have an advanced Artificial Chatbot System, so can talk with users like humans.
+            \n\n*If you have any Question, You can join Support Chat. My Developer Team will Answer. Check Support Button Below*""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Admins", callback_data="messi_admin"),
-                    InlineKeyboardButton(text="Notes", callback_data="messi_notes"),
+                    InlineKeyboardButton(text="Admins", callback_data="yui_admin"),
+                    InlineKeyboardButton(text="Notes", callback_data="yui_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Support", callback_data="messi_support"),
-                    InlineKeyboardButton(text="Credits", callback_data="messi_credit"),
+                    InlineKeyboardButton(text="Support", callback_data="yui_support"),
+                    InlineKeyboardButton(text="Credits", callback_data="yui_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="Source Code", url="https://github.com/HashiraAssociation/Lionell"),
+                    InlineKeyboardButton(text="Source Code", url="t.me/dragoneyegaming"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="source_back"),
@@ -409,47 +423,48 @@ def messi_about_callback(update, context):
             ),
         )
 
-    elif query.data == "messi_admin":
+    elif query.data == "yui_admin":
         query.message.edit_text(
-            text=f"*๏ Let's make your group bit effective now*"
-            f"\nCongragulations, {dispatcher.bot.first_name} now ready to manage your group."
-            "\n\n*Admin Tools*"
-            "\nBasic Admin tools help you to protect and powerup your group."
-            "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
-            "\n\n*Greetings*"
-            "\nLets set a welcome message to welcome new users coming to your group."
-            "\nsend `/setwelcome [message]` to set a welcome message!",
+            text=f"""*Hello [{}], My name is *Yuigahama Yui*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+            \n ‣ I can Restrict Users.
+            \n ‣ I can Greet Users with customizable welcome message and even set a group rules
+            \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
+            \n ‣ I can Warn Users until they reach max Warns, with each predefined actions such as Ban, Mute and Kick etc.
+            \n ‣ I have Note Keeping System, Blacklists, And even Predetermined replies on certain keywords.
+            \n ‣ I check Admins Permissions before perform any Command and more Stuffs.
+            \n ‣ I have an advanced Artificial Chatbot System, so can talk with users like humans.
+            \n\n*If you have any Question, You can join Support Chat. My Developer Team will Answer. Check Support Button Below*""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="messi_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="yui_")]]
             ),
         )
 
-    elif query.data == "messi_notes":
+    elif query.data == "yui_notes":
         query.message.edit_text(
-            text=f"<b>๏ Setting up notes</b>"
+            text=f"<b>Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
             f"\nto get a note simply use # at the beginning of a word"
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="messi_")]]
+                [[InlineKeyboardButton(text="Go Back", callback_data="yui_")]]
             ),
         )
-    elif query.data == "messi_support":
+    elif query.data == "yui_support":
         query.message.edit_text(
-            text="*๏ Messi support chats*"
+            text="*Connect Us Here*"
             f"\nJoin My Support Group/Channel for see or report a problem on {dispatcher.bot.first_name}.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/Messi_Probot_Support"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/Messi_Probot_Team"),
+                    InlineKeyboardButton(text="Support", url="t.me/Yuigasupport"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/x"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="messi_"),
+                    InlineKeyboardButton(text="Go Back", callback_data="yui_"),
                  
                  ]
                 ]
@@ -457,23 +472,22 @@ def messi_about_callback(update, context):
         )
 
 
-    elif query.data == "messi_credit":
+    elif query.data == "yui_credit":
         query.message.edit_text(
-            text=f"๏ Credis for *Messi*\n"
-            "\nHere Are The Developers Who Made And Gave Inspiration For The Messi A.I",
+            text=f"Credits For 💕 Yuigahama Yui 💕" ,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="H A S H I R A", url="https://github.com/HashiraAssociation"
+                            text="PrincesssGirlXD", url="https://github.com/PrincesssGirlXD"
                         ),
                         InlineKeyboardButton(
-                            text="H A S H I R A (telegram)", url="https://t.me/Hashira_Association"
+                            text="🪬 ZoRo 🪬", url="https://t.me/Dragoneyegaming"
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="B A C K", callback_data="messi_"),
+                        InlineKeyboardButton(text="Back", callback_data="yui_"),
                     ],
                 ]
             ),
@@ -483,23 +497,13 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text="๏›› This advance command for Musicplayer."
-            "\n\n๏ Command for admins only."
-            "\n • `/reload` - For refreshing the adminlist."
-            "\n • `/pause` - To pause the playback."
-            "\n • `/resume` - To resuming the playback You've paused."
-            "\n • `/skip` - To skipping the player."
-            "\n • `/end` - For end the playback."
-            "\n • `/musicplayer <on/off>` - Toggle for turn ON or turn OFF the musicplayer."
-            "\n\n๏ Command for all members."
-            "\n • `/play` <query /reply audio> - Playing music via YouTube."
-            "\n • `/playlist` - To playing a playlist of groups or your personal playlist",
+            text="Complete 5000 Users Then The Repo Will Be Public.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="messi_")
+                    InlineKeyboardButton(text="Go Back", callback_data="yui_")
                  ]
                 ]
             ),
@@ -550,7 +554,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="Help",
-                            url="t.me/messi_probot?start=help".format(context.bot.username),
+                            url="t.me/YuigaRobot?start=help".format(context.bot.username),
                         )
                     ]
                 ]
@@ -742,7 +746,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 2005266280:
+        if OWNER_ID != 1936119750:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
@@ -784,20 +788,26 @@ def migrate_chats(update: Update, context: CallbackContext):
     LOGGER.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
-
+YUI_DISPACHER_PIC = "https://telegra.ph/file/a0b260c396651c53fd2ad.jpg"
 def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}",
-                "[⚽️](https://graph.org//file/8f830535f8a86f3bf4298.jpg) Hi my dear fans, [Messi](t.me/messi_probot) is back alive.",
-                parse_mode=ParseMode.MARKDOWN,
-            )
+            name = dispatcher.bot.first_name
+            m = dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", YUI_DISPACHER_PIC, caption=f"*{name} Started!*", parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                       InlineKeyboardButton(
+                             text="[➕ Add Me To Your Group ➕]",
+                             url="https://t.me/YuigaRobot?startgroup=true")
+                     ]
+                ]
+            ),
+        )
         except Unauthorized:
             LOGGER.warning(
-                "Bot isnt able to send message to support_chat, go and check!"
-            )
+                "Yui can't able to send message to support_chat, go and check!")
         except BadRequest as e:
             LOGGER.warning(e.message)
 
@@ -815,7 +825,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        messi_about_callback, pattern=r"messi_", run_async=True
+        yui_about_callback, pattern=r"yui_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
@@ -850,8 +860,11 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Using long polling.")
-        updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
+        LOGGER.info("Finally Yui Is Online")
+        allowed_updates = ['message', 'edited_message', 'callback_query', 'callback_query', 'my_chat_member',
+                           'chat_member', 'chat_join_request', 'channel_post', 'edited_channel_post', 'inline_query']
+        updater.start_polling(
+                timeout=15, read_latency=4, allowed_updates=allowed_updates, drop_pending_updates=True)
 
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
@@ -866,20 +879,3 @@ if __name__ == "__main__":
     telethn.start(bot_token=TOKEN)
     pbot.start()
     main()
-"""
-Footer
-2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-EmikoRobot/__main__.py at master · HashiraAssociation/Lionell
-"""
