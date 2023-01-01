@@ -83,14 +83,14 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 GROUP_START_IMG = "https://telegra.ph/file/2ddc15125fe6d1cd1b6fc.mp4" 
-LMAO_XD = "DragonEyeGaming"  
+  
     
 PM_START_TEXT = """
 *Kᴏɴɪᴄʜɪᴡᴀ {},*
 *I'ᴍ Yᴜɪɢᴀʜᴀᴍᴀ Yᴜɪ, A Aɴɪᴍᴇ Tʜᴇᴍᴇᴅ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ❍ *Uᴘᴛɪᴍᴇ:* {}
-❍ *Oᴡɴᴇʀ:* {LMAO_XD}
+❍ *Oᴡɴᴇʀ:* {}
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 *Hɪᴛ Tʜᴇ /help Tᴏ Gᴇᴛ Lɪsᴛ Oғ Mʏ Cᴏᴍᴍᴀɴᴅs.××*
 """
