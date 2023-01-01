@@ -7,12 +7,12 @@ import time
 import re
 import sys
 import traceback
-import Messi.modules.sql.users_sql as sql
+import YUI.modules.sql.users_sql as sql
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from Messi import (
+from YUI import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -29,14 +29,15 @@ from Messi import (
     StartTime,
     telethn,
     pbot,
+    pgram,
     updater,
 )
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from Messi.modules import ALL_MODULES
-from Messi.modules.helper_funcs.chat_status import is_user_admin
-from Messi.modules.helper_funcs.misc import paginate_modules
+from YUI.modules import ALL_MODULES
+from YUI.modules.helper_funcs.chat_status import is_user_admin
+from YUI.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
