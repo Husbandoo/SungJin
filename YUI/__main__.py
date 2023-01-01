@@ -232,7 +232,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             uptime = get_readable_time((time.time() - StartTime))
-            update.effective_message.reply_text(PM_IMG,
+            update.effective_message.reply_photo(PM_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(uptime),
@@ -241,7 +241,6 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
-                disable_web_page_preview=False,
             )
                
     else:
