@@ -83,7 +83,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 GROUP_START_IMG = "https://telegra.ph/file/2ddc15125fe6d1cd1b6fc.mp4" 
-  
+PM_IMG = "https://telegra.ph/file/2eab97790906edc180d55.jpg"  
     
 PM_START_TEXT = """
 *Kᴏɴɪᴄʜɪᴡᴀ {},*
@@ -232,7 +232,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             uptime = get_readable_time((time.time() - StartTime))
-            update.effective_message.reply_text(
+            update.effective_message.reply_photo(PM_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(uptime),
