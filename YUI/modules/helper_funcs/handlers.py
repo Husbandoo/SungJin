@@ -1,6 +1,6 @@
-import Messi.modules.sql.blacklistusers_sql as sql
-from Messi import ALLOW_EXCL
-from Messi import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
+import YUI.modules.sql.blacklistusers_sql as sql
+from YUI import ALLOW_EXCL
+from YUI import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
 
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, RegexHandler, Filters
