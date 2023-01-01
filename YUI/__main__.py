@@ -400,7 +400,7 @@ def yui_about_callback(update, context):
             \n ‣ I have Note Keeping System, Blacklists, And even Predetermined replies on certain keywords.
             \n ‣ I check Admins Permissions before perform any Command and more Stuffs.
             \n ‣ I have an advanced Artificial Chatbot System, so can talk with users like humans.
-            \n\n*If you have any Question, You can join Support Chat. My Developer Team will Answer. Check Support Button Below*""",
+            """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
