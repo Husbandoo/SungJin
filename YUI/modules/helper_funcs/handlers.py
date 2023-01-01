@@ -1,7 +1,6 @@
-
-import YUI.modules.sql.blacklistusers_sql as sql
-from YUI import ALLOW_EXCL
-from YUI import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
+import Messi.modules.sql.blacklistusers_sql as sql
+from Messi import ALLOW_EXCL
+from Messi import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
 
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, RegexHandler, Filters
@@ -14,9 +13,9 @@ from pyrate_limiter import (
 )
 
 if ALLOW_EXCL:
-    CMD_STARTERS = ("/", "!", ".", "~")
+    CMD_STARTERS = ("/", "!", "~")
 else:
-    CMD_STARTERS = ("/", "!", ".", "~",)
+    CMD_STARTERS = ("/", "!", "~",)
 
 
 class AntiSpam:
