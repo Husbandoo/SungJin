@@ -4,7 +4,7 @@ from pyrogram import filters
 
 @pgram.on_message(filters.command("sketch") & ~filters.photo & ~filters.private)
 def sketch(_, message):
-    a = message.reply("Creating Sketch...")
+    message.reply("Creating Sketch...")
     # Download the image
     image = message.photo.download("image.jpg")
     
@@ -19,6 +19,5 @@ def sketch(_, message):
     im.save("sketch.jpg")
     
     # Send the sketch to the user
-    client.send_photo(message.chat.id, "sketch.jpg")
-    a.delete()
+    pgram.send_photo(message.chat.id, "sketch.jpg")
     message.reply("Sketch Successfully Printed.")
