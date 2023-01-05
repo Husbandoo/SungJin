@@ -3,7 +3,7 @@ from YUI import pbot
 from pyrogram import Client , filters
 
 
-@pbot.on_message(filters.photo("sketch"))
+@pbot.on_message(filters.command("sketch") & filters.photo)
 def sketch(client, message):
     a = message.reply("Creating Sketch...")
     # Download the image
