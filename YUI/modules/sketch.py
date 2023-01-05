@@ -1,9 +1,8 @@
-import pyrogram
 from YUI import pgram
 from pyrogram import filters
 
 
-@pgram.on_message(filters.command("sketch") & ~filters.photo)
+@pgram.on_message(filters.command("sketch") & ~filters.photo & -filters.private)
 def sketch(_, message):
     a = message.reply("Creating Sketch...")
     # Download the image
