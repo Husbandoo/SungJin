@@ -1,6 +1,6 @@
 import pyrogram
 from YUI import pbot
-from pyrogram import Client , filters
+from pyrogram import Client , Filters
 
 
 @pbot.on_message(filters.command("sketch") & filters.photo)
