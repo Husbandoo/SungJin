@@ -6,7 +6,7 @@ from pyrogram import filters
 def sketch(_, message):
     message.reply("Creating Sketch...")
     # Download the image
-   ''' image = message.photo.download("image.jpg")
+'''image = message.photo.download("image.jpg")
     
     # Open the image using Pillow
     from PIL import Image, ImageFilter
