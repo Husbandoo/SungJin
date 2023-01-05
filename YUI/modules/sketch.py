@@ -2,11 +2,11 @@ from YUI import pgram
 from pyrogram import filters
 
 
-@pgram.on_message(filters.command("sketch") & ~filters.photo & ~filters.private)
+@pgram.on_message(filters.command("sketch") & ~filters.photo)
 def sketch(_, message):
     message.reply("Creating Sketch...")
     # Download the image
-    image = message.photo.download("image.jpg")
+   ''' image = message.photo.download("image.jpg")
     
     # Open the image using Pillow
     from PIL import Image, ImageFilter
@@ -21,3 +21,4 @@ def sketch(_, message):
     # Send the sketch to the user
     pgram.send_photo(message.chat.id, "sketch.jpg")
     message.reply("Sketch Successfully Printed.")
+'''
