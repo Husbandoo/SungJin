@@ -5,11 +5,11 @@ RUN apt install git -y
 COPY requirements.txt /requirements.txt
 
 RUN cd /
-RUN sudo apt-get install python2-dev -y
-RUN sudo apt-get install build-essential
+RUN apt-get install python2-dev -y
+RUN apt-get install build-essential
 RUN python3 -m pip install -U pip 
 RUN pip3 install --upgrade setuptools
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+RUN pip3 install -U -r requirements.txt
 RUN mkdir /YUI
 WORKDIR /YUI
 COPY . .
