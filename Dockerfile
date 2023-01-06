@@ -6,7 +6,7 @@ COPY requirements.txt /requirements.txt
 
 RUN cd /
 RUN apt-get install python2-dev -y
-RUN apt-get install build-essential
+RUN apt-get install build-essential -y
 RUN python3 -m pip install -U pip 
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -U -r requirements.txt
