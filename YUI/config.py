@@ -20,18 +20,18 @@ class Config(object):
     WORKERS=8
     LOAD=""
     NO_LOAD="translation"
-    MONGO_DB="mongodb+srv://yuiga:serena12@cluster0.awwhgt0.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_DB="mongodb+srv://yuiga:erena12@cluster0.awwhgt0.mongodb.net/?retryWrites=true&w=majority"
     WEBHOOK=False
-    BOT_API_URL="5885016551:AAGr6TVgVcd84MooEZgaeFxy5-qFkuMQagk"
+    BOT_API_URL="5885016cd84MooEZgaeFxy5-qFkuMQagk"
     #kacrmdi
     WOLVES=[]
-    BOT_ID=5885016551
+    BOT_ID=5885016
     SQLALCHEMY_DATABASE_URI="postgres://jympgnps:2_sz2vN3Zz8z5thAssDB9BRhQt8BZRKT@jelani.db.elephantsql.com/jympgnps" 
     JOIN_LOGGER=-1001692375111
-    API_HASH="439d58a783f6e70086ea81ba5baa5207" 
+    API_HASH="439d58a783f6e7008ba5baa5207" 
     INFOPIC=True
     TIGERS=[]
-    STRING_SESSION ="1BVtsOLoBuxPwqagT9ji3c5_QP4_A5pBA9JnfX5-8x1ipHJwiEVkNedPczVb35jMltPTTEJ2yzF9-OTL_ZJsBlspnic-fg62wAl3yNu83VQwR1wh7SDTAR2BnxEcMb-xy8vRITVwfzivX4gII49NWY263b22I8nVntgtjQ-y3YVImjfzk3EQbB_xGYgINyzrTvp2Crd0qCw4ITzyfFvGnc3z28N8nfgCXoV_jqAf2oezRwuKFoTVKz3O94xAiL8UV5KP0dsCP389jIHkVzh-47H5kCnASAjVL07qheS1fazK1vl7PxAU4Su3ewd7K3BQ1m9LNoqMqc5uY79UA15i_bthp3PNmVvk="
+    STRING_SESSION ="T9ji3c5_QP4_A5pBA9JnfX5-8x1ipHJwiEVkNedPczVb35jMltPTTEJ2yzF9-OTL_ZJsBlspnic-fg62wAl3yNu83VQwR1wh7SDTAR2BnxEcMb-xy8vRITVwfzivX4gII49NWY263b22I8nVntgtjQ-y3YVImjfzk3EQbB_xGYgINyzrTvp2Crd0qCw4ITzyfFvGnc3z28N8nfgCXoV_jqAf2oezRwuKFoTVKz3O94xAiL8UV5KP0dsCP389jIHkVzh-47H5kCnASAjVL07qheS1fazK1vl7PxAU4Su3ewd7K3BQ1m9LNoqMqc5uY79UA15i_bthp3PNmVvk="
     API_ID=28624076
     BL_CHATS=[1]
     DB_URL2="postgres://dpmyesld:reMVuSpnDIcTaIm1B_zGevEe1MIwK5ha@salt.db.elephantsql.com/dpmyesld" 
