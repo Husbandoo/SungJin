@@ -247,7 +247,7 @@ def start(update: Update, context: CallbackContext):
         first = update.effective_user.full_name
         chat = update.effective_chat.title
         update.effective_message.reply_video(
-                video="https://telegra.ph/file/2ddc15125fe6d1cd1b6fc.mp4",
+                video="https://te.legra.ph/file/32115c41c5fc5cbbefbac.mp4",
                 caption="Yᴇs I'ᴍ Aʟɪᴠᴇ Aɴᴅ Wᴏʀᴋɪɴɢ Fɪɴᴇ. \nCʜᴇᴄᴋ Oᴜᴛ Tʜᴇ Bᴜᴛᴛᴏɴs Mᴇɴᴛɪᴏɴᴇᴅ Bᴇʟᴏᴡ.",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
@@ -391,7 +391,7 @@ def yui_about_callback(update, context):
     query = update.callback_query
     if query.data == "yui_":
         query.message.edit_text(
-            text="""Hello [{}], My name is 💕*Yuigahama Yui*💕. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+            text="""Hello [{}], My name is *Sung Jin Woo*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
             \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
@@ -424,7 +424,7 @@ def yui_about_callback(update, context):
 
     elif query.data == "yui_admin":
         query.message.edit_text(
-            text="""*Hello [{}], My name is *Yuigahama Yui*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
+            text="""*Hello [{}], My name is *Sung Jin Woo*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
             \n ‣ I can Restrict Users.
             \n ‣ I can Greet Users with customizable welcome message and even set a group rules
             \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
@@ -459,8 +459,8 @@ def yui_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/Yuigasupport"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/x"),
+                    InlineKeyboardButton(text="Support", url="https://t.me/Arsenia_Support"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/ShadowMonarchUpdates"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="yui_"),
@@ -473,13 +473,13 @@ def yui_about_callback(update, context):
 
     elif query.data == "yui_credit":
         query.message.edit_text(
-            text="Credits For 💕 Yuigahama Yui 💕" ,
+            text="Credits For *Sung Jin Woo*" ,
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="PrincesssGirlXD", url="https://github.com/PrincesssGirlXD"
+                            text="Asta™", url=""
                         ),
                         InlineKeyboardButton(
                             text="🪬 ZoRo 🪬", url="https://t.me/Dragoneyegaming"
