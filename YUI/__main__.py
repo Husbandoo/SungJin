@@ -82,12 +82,12 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-GROUP_START_IMG = "https://telegra.ph/file/2ddc15125fe6d1cd1b6fc.mp4" 
-PM_IMG = "https://telegra.ph/file/2eab97790906edc180d55.jpg"  
+GROUP_START_IMG = "https://te.legra.ph/file/efe42f63245c03f633957.jpg" 
+PM_IMG = "https://te.legra.ph/file/efe42f63245c03f633957.jpg"  
     
 PM_START_TEXT = """
 *Kᴏɴɪᴄʜɪᴡᴀ {},*
-*I'ᴍ Yᴜɪɢᴀʜᴀᴍᴀ Yᴜɪ, A Aɴɪᴍᴇ Tʜᴇᴍᴇᴅ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
+*I'ᴍ Sᴜɴɢ Jɪɴ Wᴏᴏ, A Aɴɪᴍᴇ Tʜᴇᴍᴇᴅ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ❍ *Uᴘᴛɪᴍᴇ:* {}
 ❍ *Oᴡɴᴇʀ:* {}
@@ -98,27 +98,27 @@ PM_START_TEXT = """
 buttons = [
     [
                         InlineKeyboardButton(
-                             text="➕️ Add Yui To Your Group ➕️",
-                             url="https://t.me/YuigaRobot?startgroup=true"),
+                             text="➕️ Aᴅᴅ Sᴜɴɢ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕️",
+                             url="https://t.me/ShadowMonarchBot?startgroup=true"),
                     ],
                    [
                        InlineKeyboardButton(
                              text="Sᴜᴘᴘᴏʀᴛ",
-                             url="https://t.me/Yuigasupport"),
+                             url="https://t.me/Arsenia_Support"),
                        InlineKeyboardButton(
                              text="Uᴘᴅᴀᴛᴇs",
-                             url="https://t.me/x"),
+                             url="https://t.me/ShadowMonarchUpdates"),
                    ],
                   [
                         InlineKeyboardButton(
-                             text="Reach My Owner",
-                             url="https://t.me/dragoneyegaming"),
+                             text="Aɴɪsᴛᴀᴛᴇ Tᴇᴄʜ",
+                             url="https://t.me/AnistateTech"),
                     ],
     ]
 
 
 HELP_STRINGS = """
-Hey [{}] *Yui* here!
+Hey [{}] *Shadow Monarch* here!
 I Help Admins To Manage Their Groups!
 Main commands available :
  ‣ /help: PM's you this message.
@@ -255,10 +255,10 @@ def start(update: Update, context: CallbackContext):
                   [
                        InlineKeyboardButton(
                              text="Sᴜᴘᴘᴏʀᴛ",
-                             url="https://t.me/Yuigasupport"),
+                             url="https://t.me/Arsenia_Support"),
                        InlineKeyboardButton(
                              text="Uᴘᴅᴀᴛᴇs",
-                             url="https://t.me/x")
+                             url="https://t.me/ShadowMonarchUpdates")
                      ]
                 ]
             ),
