@@ -479,10 +479,10 @@ def yui_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Asta™", url=""
+                            text="Asta™", url="https://t.me/PoweredByYuv"
                         ),
                         InlineKeyboardButton(
-                            text="🪬 ZoRo 🪬", url="https://t.me/Dragoneyegaming"
+                            text="Zoro", url="https://t.me/CrimsonDrops"
                         ),
                     ],
                     [
@@ -553,7 +553,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="Help",
-                            url="t.me/YuigaRobot?start=help".format(context.bot.username),
+                            url="t.me/ShadowMonarchBot?start=help".format(context.bot.username),
                         )
                     ]
                 ]
@@ -745,10 +745,10 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1936119750:
+        if OWNER_ID != 1938491135:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
-                "[My Channel]({})".format(DONATION_LINK),
+                "[My Channel]({https://t.me/AnistateTech})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
     else:
@@ -787,7 +787,7 @@ def migrate_chats(update: Update, context: CallbackContext):
     LOGGER.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
-YUI_DISPACHER_PIC = "https://telegra.ph/file/a0b260c396651c53fd2ad.jpg"
+YUI_DISPACHER_PIC = "https://te.legra.ph/file/efe42f63245c03f633957.jpg"
 def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
@@ -798,15 +798,15 @@ def main():
                 [
                   [
                        InlineKeyboardButton(
-                             text="[➕ Add Me To Your Group ➕]",
-                             url="https://t.me/YuigaRobot?startgroup=true")
+                             text="[➕ Aᴅᴅ Sᴜɴɢ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕]",
+                             url="https://t.me/ShadowMonarchBot?startgroup=true")
                      ]
                 ]
             ),
         )
         except Unauthorized:
             LOGGER.warning(
-                "Yui can't able to send message to support_chat, go and check!")
+                "Sung can't able to send message to support_chat, go and check!")
         except BadRequest as e:
             LOGGER.warning(e.message)
 
@@ -859,7 +859,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Finally Yui Is Online")
+        LOGGER.info("Finally Shadow Monarch Is Online")
         allowed_updates = ['message', 'edited_message', 'callback_query', 'callback_query', 'my_chat_member',
                            'chat_member', 'chat_join_request', 'channel_post', 'edited_channel_post', 'inline_query']
         updater.start_polling(
